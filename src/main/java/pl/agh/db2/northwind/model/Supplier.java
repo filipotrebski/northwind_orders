@@ -2,9 +2,11 @@ package pl.agh.db2.northwind.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity // adnotacja że klasa będzię encją bazy danych
-@Table (name = "SUPPLIERS") // tablica i jej właściwości
+@Table(name = "SUPPLIERS") // tablica i jej właściwości
 public class Supplier {
     private int supplierID;
     private String companyName;
@@ -18,7 +20,7 @@ public class Supplier {
     private String phone;
     private String fax;
     private String homePage;
-    //TODO jak będzie tablica product to dodać powiązanie
+    private List<Product> products = new ArrayList<>();
 
     //tu jeszcze pole  które będzie wiązało do produktów ale to jak będzie reszta tablic + geter i seter z kozfiguracją
     // chyba też pusty konstruktor
@@ -42,7 +44,8 @@ public class Supplier {
     @Id // oznaczamy kolumnę z kluczem
     @NotNull // tu że nie może być 0
     @GeneratedValue // generowany automatycznie jak coś dodamy
-    @Column(name = "SUPPLIERID", unique = true)  // tu że pole jest kolumną oraż jej właściwości, nzwa oraz ze zaweiera unikalnre wartości
+    @Column(name = "SUPPLIERID", unique = true)
+    // tu że pole jest kolumną oraż jej właściwości, nzwa oraz ze zaweiera unikalnre wartości
     //te adnotacje tylko przy getterach
     public int getSupplierID() {
         return supplierID;
@@ -103,6 +106,35 @@ public class Supplier {
         return homePage;
     }
 
+    //Określenie powiązania pomędzy tabelami -> jeden supplier wiele produtów, od drugiej też mapujemy
+    @OneToMany(
+            targetEntity = Product.class, //klasa docelowa
+            mappedBy = "supplierId", // mapujemy po supplierID
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public Supplier() {
+    }
+
+    public Supplier(String companyName, String contactName, String contactTitle,
+                    String address, String city, String region, String postalCode,
+                    String country, String phone, String fax, String homePage) {
+        this.companyName = companyName;
+        this.contactName = contactName;
+        this.contactTitle = contactTitle;
+        this.address = address;
+        this.city = city;
+        this.region = region;
+        this.postalCode = postalCode;
+        this.country = country;
+        this.phone = phone;
+        this.fax = fax;
+        this.homePage = homePage;
+    }
 
     public void setSupplierID(int supplierID) {
         this.supplierID = supplierID;
@@ -150,5 +182,9 @@ public class Supplier {
 
     public void setHomePage(String homePage) {
         this.homePage = homePage;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }
