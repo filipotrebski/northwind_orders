@@ -1,4 +1,4 @@
 package pl.agh.db2.northwind.model;
 
-public class Shippers {
+public class Order {
 }
