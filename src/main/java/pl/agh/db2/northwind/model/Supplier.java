@@ -1,10 +1,15 @@
 package pl.agh.db2.northwind.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity // adnotacja że klasa będzię encją bazy danych
 @Table(name = "SUPPLIERS") // tablica i jej właściwości
 public class Supplier {
@@ -22,24 +27,6 @@ public class Supplier {
     private String homePage;
     private List<Product> products = new ArrayList<>();
 
-    //tu jeszcze pole  które będzie wiązało do produktów ale to jak będzie reszta tablic + geter i seter z kozfiguracją
-    // chyba też pusty konstruktor
-    public Supplier(int supplierID, String companyName, String contactName, String contactTitle,
-                    String address, String city, String region, String postalCode, String country,
-                    String phone, String fax, String homePage) {
-        this.supplierID = supplierID;
-        this.companyName = companyName;
-        this.contactName = contactName;
-        this.contactTitle = contactTitle;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.phone = phone;
-        this.fax = fax;
-        this.homePage = homePage;
-    }
 
     @Id // oznaczamy kolumnę z kluczem
     @NotNull // tu że nie może być 0
@@ -117,24 +104,6 @@ public class Supplier {
         return products;
     }
 
-    public Supplier() {
-    }
-
-    public Supplier(String companyName, String contactName, String contactTitle,
-                    String address, String city, String region, String postalCode,
-                    String country, String phone, String fax, String homePage) {
-        this.companyName = companyName;
-        this.contactName = contactName;
-        this.contactTitle = contactTitle;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.phone = phone;
-        this.fax = fax;
-        this.homePage = homePage;
-    }
 
     public void setSupplierID(int supplierID) {
         this.supplierID = supplierID;

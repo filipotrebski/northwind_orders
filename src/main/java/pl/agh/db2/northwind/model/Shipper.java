@@ -1,33 +1,47 @@
 package pl.agh.db2.northwind.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "SHIPPERS")
-public class Shippers {
+public class Shipper {
     private int shipperId;
     private String companyName;
     private String phone;
+    private List<Order> orders;
 
-    public Shippers() {
-    }
 
-    public Shippers(String companyName, String phone) {
-        this.companyName = companyName;
-        this.phone = phone;
-    }
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "SHIPPERID")
     public int getShipperId() {
         return shipperId;
     }
 
+    @Column(name = "COMPANYNAME")
     public String getCompanyName() {
         return companyName;
     }
 
+    @Column(name = "PHONE")
     public String getPhone() {
         return phone;
+    }
+
+    @OneToMany(
+            targetEntity = Order.class,
+            mappedBy = "shipperId",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Order> getOrders() {
+        return orders;
     }
 
     public void setShipperId(int shipperId) {

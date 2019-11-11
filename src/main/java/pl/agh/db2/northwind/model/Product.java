@@ -1,8 +1,13 @@
 package pl.agh.db2.northwind.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {
@@ -18,24 +23,6 @@ public class Product {
     private int discountinued;
 
     //TODO Order details connection
-
-
-    public Product() {
-    }
-
-    public Product(String productName, Supplier supplierId, Category categoryId,
-                   String quantityPerUnit, double unitPrice, int unitsInStock,
-                   int unitsInOrder, int reorderLevel, int discountinued) {
-        this.productName = productName;
-        this.supplierId = supplierId;
-        this.categoryId = categoryId;
-        this.quantityPerUnit = quantityPerUnit;
-        this.unitPrice = unitPrice;
-        this.unitsInStock = unitsInStock;
-        this.unitsInOrder = unitsInOrder;
-        this.reorderLevel = reorderLevel;
-        this.discountinued = discountinued;
-    }
 
     @Id
     @NotNull

@@ -1,10 +1,15 @@
 package pl.agh.db2.northwind.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -28,36 +33,6 @@ public class Employee {
     private String photoPath;
     private Employee supervisor;
     private List<Employee> subordinates;
-
-    public Employee() {
-    }
-
-    public Employee(String lastName, String firstName, String title,
-                    String titleOfCourtesy, Date birthDate, Date hireDate,
-                    String address, String city, String region, String postalCode,
-                    String country, String homePhone, String extension, String photo,
-                    String notes, int reportsto, String photoPath, Employee supervisor,
-                    List<Employee> subordinates) {
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.title = title;
-        this.titleOfCourtesy = titleOfCourtesy;
-        this.birthDate = birthDate;
-        this.hireDate = hireDate;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.homePhone = homePhone;
-        this.extension = extension;
-        this.photo = photo;
-        this.notes = notes;
-        this.reportsto = reportsto;
-        this.photoPath = photoPath;
-        this.supervisor = supervisor;
-        this.subordinates = subordinates;
-    }
 
     @Id
     @NotNull

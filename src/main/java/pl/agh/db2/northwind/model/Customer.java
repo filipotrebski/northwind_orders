@@ -1,11 +1,14 @@
 package pl.agh.db2.northwind.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
+
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "CUSTOMERS")
 public class Customer {
@@ -20,24 +23,7 @@ public class Customer {
     private String country;
     private String phone;
     private String fax;
-
-    public Customer() {
-    }
-
-    public Customer(String companyName, String contactName, String contactTitle,
-                    String address, String city, String region, String postalCode,
-                    String country, String phone, String fax) {
-        this.companyName = companyName;
-        this.contactName = contactName;
-        this.contactTitle = contactTitle;
-        this.address = address;
-        this.city = city;
-        this.region = region;
-        this.postalCode = postalCode;
-        this.country = country;
-        this.phone = phone;
-        this.fax = fax;
-    }
+    private List<Order> orders;
 
     @Id
     @NotNull
@@ -94,6 +80,16 @@ public class Customer {
     @Column(name = "FAX")
     public String getFax() {
         return fax;
+    }
+
+    @OneToMany (
+            targetEntity = Order.class,
+            mappedBy = "orderId",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Order> getOrders() {
+        return orders;
     }
 
     private void setCustomerId(String customerId) {

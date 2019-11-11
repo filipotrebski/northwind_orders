@@ -1,10 +1,15 @@
 package pl.agh.db2.northwind.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "CATEGORIES")
 public class Category {
@@ -12,13 +17,7 @@ public class Category {
     private String categoryName;
     private String description;
     private String picture;
-    private List<Product> products;
-
-    public Category(String categoryName, String description, String picture) {
-        this.categoryName = categoryName;
-        this.description = description;
-        this.picture = picture;
-    }
+    private List<Product> products =  new ArrayList<>();
 
     @Id
     @NotNull
@@ -45,7 +44,9 @@ public class Category {
 
     @OneToMany(
             targetEntity = Product.class,
-            mappedBy = "categoryId"
+            mappedBy = "categoryId",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     public List<Product> getProducts() {
         return products;
