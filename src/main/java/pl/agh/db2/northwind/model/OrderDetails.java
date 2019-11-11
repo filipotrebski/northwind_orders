@@ -1,78 +1,66 @@
 package pl.agh.db2.northwind.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "ORDERDETAILS")
 public class OrderDetails {
-    private int odId;
-    private Order orderID;
-    private Product productId;
-    private Double unitPrice;
-    private int quantity;
-    private int discount;
 
-    @Id
-    @NotNull
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public int getOdId() {
-        return odId;
+    private int orderID;
+    private Product productID;
+    private float unitPrice;
+    private int quantity;
+    private float discount;
+
+    public OrderDetails(int orderID, Product productID, float unitPrice, int quantity, float discount) {
+        this.orderID = orderID;
+        this.productID = productID;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.discount = discount;
     }
 
-    @ManyToOne
-    @JoinColumn (name = "ORDDERID")
-    public Order getOrderID() {
+    @JoinColumn(name = "orderId")
+    public int getOrderID() {
         return orderID;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "PRODUCTID")
-    public Product getProductId() {
-        return productId;
-    }
-
-    @Column(name = "UNITPRICE")
-    public Double getUnitPrice() {
-        return unitPrice;
-    }
-
-    @Column(name = "QUANTITY")
-    public int getQuantity() {
-        return quantity;
-    }
-
-    @Column(name = "DISCOUNT")
-    public int getDiscount() {
-        return discount;
-    }
-
-    public void setOdId(int odId) {
-        this.odId = odId;
-    }
-
-    public void setOrderID(Order orderID) {
+    public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
 
-    public void setProductId(Product productId) {
-        this.productId = productId;
+    @JoinColumn(name = "productId")
+    public Product getProductID() {
+        return productID;
     }
 
-    public void setUnitPrice(Double unitPrice) {
+    public void setProductID(Product productID) {
+        this.productID = productID;
+    }
+
+    @Column(name = "unitPrice")
+    public float getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    @Column(name = "quantity")
+    public int getQuantity() {
+        return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public void setDiscount(int discount) {
+    @Column(name = "discount")
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(float discount) {
         this.discount = discount;
     }
 }
