@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/northwind.iml" afterPath="$PROJECT_DIR$/northwind.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" />
-    </list>
+    <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
