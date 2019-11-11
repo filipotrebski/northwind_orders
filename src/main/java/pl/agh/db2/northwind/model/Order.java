@@ -1,13 +1,18 @@
 package pl.agh.db2.northwind.model;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.xml.crypto.Data;
+import java.util.Date;
+
 public class Order {
 
     private int orderID;
     private Customer customerID;
     private Employee employeeID;
-    private String orderDate;
-    private String requiredDate;
-    private String shippedDate;
+    private Date orderDate;
+    private Date requiredDate;
+    private Date shippedDate;
     private Shippers shipVia;
     private String freight;
     private String shipName;
@@ -17,6 +22,33 @@ public class Order {
     private String shipPostalCode;
     private String shipCountry;
 
+    public Order(int orderID, Customer customerID,
+                 Employee employeeID, Date orderDate,
+                 Date requiredDate, Date shippedDate,
+                 Shippers shipVia, String freight,
+                 String shipName, String shipAddress,
+                 String shipCity, String shipRegion,
+                 String shipPostalCode, String shipCountry) {
+        this.orderID = orderID;
+        this.customerID = customerID;
+        this.employeeID = employeeID;
+        this.orderDate = orderDate;
+        this.requiredDate = requiredDate;
+        this.shippedDate = shippedDate;
+        this.shipVia = shipVia;
+        this.freight = freight;
+        this.shipName = shipName;
+        this.shipAddress = shipAddress;
+        this.shipCity = shipCity;
+        this.shipRegion = shipRegion;
+        this.shipPostalCode = shipPostalCode;
+        this.shipCountry = shipCountry;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
+    @Column(name = "orderId", unique = true)
     public int getOrderID() {
         return orderID;
     }
@@ -25,6 +57,7 @@ public class Order {
         this.orderID = orderID;
     }
 
+    @JoinColumn(name = "customerID")
     public Customer getCustomerID() {
         return customerID;
     }
@@ -33,6 +66,7 @@ public class Order {
         this.customerID = customerID;
     }
 
+    @JoinColumn(name = "EMPLOYID")
     public Employee getEmployeeID() {
         return employeeID;
     }
@@ -41,30 +75,34 @@ public class Order {
         this.employeeID = employeeID;
     }
 
-    public String getOrderDate() {
+    @Column(name = "orderDate")
+    public Date getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 
-    public String getRequiredDate() {
+    @Column(name = "requiredDate")
+    public Date getRequiredDate() {
         return requiredDate;
     }
 
-    public void setRequiredDate(String requiredDate) {
+    public void setRequiredDate(Date requiredDate) {
         this.requiredDate = requiredDate;
     }
 
-    public String getShippedDate() {
+    @Column(name = "shippedDate")
+    public Date getShippedDate() {
         return shippedDate;
     }
 
-    public void setShippedDate(String shippedDate) {
+    public void setShippedDate(Date shippedDate) {
         this.shippedDate = shippedDate;
     }
 
+    @JoinColumn(name = "SHIPPERID")
     public Shippers getShipVia() {
         return shipVia;
     }
@@ -73,6 +111,7 @@ public class Order {
         this.shipVia = shipVia;
     }
 
+    @Column(name = "freight")
     public String getFreight() {
         return freight;
     }
@@ -81,6 +120,7 @@ public class Order {
         this.freight = freight;
     }
 
+    @Column(name = "shipName")
     public String getShipName() {
         return shipName;
     }
@@ -89,6 +129,7 @@ public class Order {
         this.shipName = shipName;
     }
 
+    @Column(name = "shipAddress")
     public String getShipAddress() {
         return shipAddress;
     }
@@ -97,6 +138,7 @@ public class Order {
         this.shipAddress = shipAddress;
     }
 
+    @Column(name = "shipCity")
     public String getShipCity() {
         return shipCity;
     }
@@ -105,6 +147,7 @@ public class Order {
         this.shipCity = shipCity;
     }
 
+    @Column(name = "shipRegion")
     public String getShipRegion() {
         return shipRegion;
     }
@@ -113,6 +156,7 @@ public class Order {
         this.shipRegion = shipRegion;
     }
 
+    @Column(name = "shipPostalCode")
     public String getShipPostalCode() {
         return shipPostalCode;
     }
@@ -121,6 +165,7 @@ public class Order {
         this.shipPostalCode = shipPostalCode;
     }
 
+    @Column(name = "shipCountry")
     public String getShipCountry() {
         return shipCountry;
     }
