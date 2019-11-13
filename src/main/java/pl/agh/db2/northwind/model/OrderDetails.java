@@ -3,7 +3,8 @@ package pl.agh.db2.northwind.model;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 
-public class OrderDetails {
+public class
+OrderDetails {
 
     private int orderID;
     private Product productID;
