@@ -2,7 +2,6 @@ package pl.agh.db2.northwind.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class Order {
