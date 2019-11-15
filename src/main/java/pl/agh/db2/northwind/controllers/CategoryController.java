@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class CategoryController {
 
-
+    @GetMapping("/category")
     public String category(){
 
         return "category";
