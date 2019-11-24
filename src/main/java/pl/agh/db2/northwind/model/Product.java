@@ -23,8 +23,6 @@ public class Product {
     private int reorderLevel;
     private int discountinued;
 
-    //TODO Order details connection
-
     @Id
     @NotNull
     @GeneratedValue

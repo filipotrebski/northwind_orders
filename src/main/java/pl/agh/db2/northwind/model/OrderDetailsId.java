@@ -2,7 +2,7 @@ package pl.agh.db2.northwind.model;
 
 import java.io.Serializable;
 
-//TODO może @IdClass?
+//@IdClass vs. @EmbeddedId
 //https://www.baeldung.com/jpa-composite-primary-keys
 //https://vladmihalcea.com/the-best-way-to-map-a-composite-primary-key-with-jpa-and-hibernate/
 

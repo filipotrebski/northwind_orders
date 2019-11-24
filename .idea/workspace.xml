@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/CategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/OrderDetailsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/ShipperController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/controllers/SupplierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetailsId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/northwind.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetailsId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetailsId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Shipper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Shipper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,38 +31,6 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="categories: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="employees: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="orderdetails: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -225,6 +175,14 @@
       <option name="presentableId" value="Default" />
       <updated>1573486963085</updated>
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix">
+      <created>1574606342993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574606342993</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

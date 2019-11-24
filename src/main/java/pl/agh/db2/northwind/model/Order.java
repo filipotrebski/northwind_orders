@@ -29,7 +29,6 @@ public class Order {
     private String shipPostalCode;
     private String shipCountry;
 
-    //TODO Order details connection
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
