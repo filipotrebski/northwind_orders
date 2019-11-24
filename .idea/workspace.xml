@@ -4,8 +4,8 @@
     <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetailsId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/OrderDetailsId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/agh/db2/northwind/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +31,24 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - northwind@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="northwind: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="customers: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -182,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574606342993</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix">
+      <created>1574608113657</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574608113657</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
