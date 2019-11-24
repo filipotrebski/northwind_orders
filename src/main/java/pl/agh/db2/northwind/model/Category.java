@@ -5,50 +5,50 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "CATEGORIES")
 public class Category {
+
     private int categoryId;
     private String categoryName;
     private String description;
     private String picture;
-    private List<Product> products =  new ArrayList<>();
+    private Set<Product> products;
 
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name = "CATEGORYID", unique = true)
+    @Column(name = "categoryId", unique = true)
     public int getCategoryId() {
         return categoryId;
     }
 
-    @Column(name = "CATEGORYNAME")
+    @Column(name = "category_name")
     public String getCategoryName() {
         return categoryName;
     }
 
-    @Column(name = "DESCRIPTION")
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
 
-    @Column(name = "PICTURE")
+    @Column(name = "picture")
     public String getPicture() {
         return picture;
     }
 
     @OneToMany(
             targetEntity = Product.class,
-            mappedBy = "categoryId",
+            mappedBy = "productId",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    public List<Product> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
@@ -68,7 +68,7 @@ public class Category {
         this.picture = picture;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 }

@@ -84,7 +84,7 @@ public class Customer {
 
     @OneToMany (
             targetEntity = Order.class,
-            mappedBy = "orderId",
+            mappedBy = "orderID",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
@@ -134,5 +134,9 @@ public class Customer {
 
     private void setFax(String fax) {
         this.fax = fax;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }

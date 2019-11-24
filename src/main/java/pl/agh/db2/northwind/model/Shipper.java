@@ -36,12 +36,16 @@ public class Shipper {
 
     @OneToMany(
             targetEntity = Order.class,
-            mappedBy = "shipperId",
+            mappedBy = "orderID",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     public List<Order> getOrders() {
         return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     public void setShipperId(int shipperId) {

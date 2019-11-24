@@ -1,64 +1,69 @@
 package pl.agh.db2.northwind.model;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
-public class
-OrderDetails {
+@Entity
+@IdClass(OrderDetailsId.class)
+@Table(name = "ORDERDETAILS")
+public class OrderDetails {
 
-    private int orderID;
-    private Product productID;
+    private Order orderId;
+    private Product productId;
     private float unitPrice;
     private int quantity;
     private float discount;
 
-    public OrderDetails(int orderID, Product productID, float unitPrice, int quantity, float discount) {
-        this.orderID = orderID;
-        this.productID = productID;
+    public OrderDetails() {
+    }
+
+    public OrderDetails(Order orderId, Product productId, float unitPrice, int quantity, float discount) {
+        this.orderId = orderId;
+        this.productId = productId;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
         this.discount = discount;
     }
 
-    @JoinColumn(name = "orderId")
-    public int getOrderID() {
-        return orderID;
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "ORDERID", referencedColumnName = "orderId")
+    public Order getOrderId() {
+        return orderId;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    @Id
+    @ManyToOne
+    @JoinColumn (name = "PRODUCTID", referencedColumnName = "productId")
+    public Product getProductId() {
+        return productId;
     }
 
-    @JoinColumn(name = "productId")
-    public Product getProductID() {
-        return productID;
-    }
-
-    public void setProductID(Product productID) {
-        this.productID = productID;
-    }
-
-    @Column(name = "unitPrice")
     public float getUnitPrice() {
         return unitPrice;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public float getDiscount() {
+        return discount;
+    }
+
+    public void setOrderId(Order orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setProductId(Product productId) {
+        this.productId = productId;
     }
 
     public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
     }
 
-    @Column(name = "quantity")
-    public int getQuantity() {
-        return quantity;
-    }
-
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    @Column(name = "discount")
-    public float getDiscount() {
-        return discount;
     }
 
     public void setDiscount(float discount) {

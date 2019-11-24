@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "PRODUCTS")
 public class Product {
+
     private int productId;
     private String productName;
     private Supplier supplierId;
@@ -43,6 +44,8 @@ public class Product {
         return supplierId;
     }
 
+    @ManyToOne
+    @JoinColumn(name="categoryId")
     public Category getCategoryId() {
         return categoryId;
     }

@@ -1,9 +1,17 @@
 package pl.agh.db2.northwind.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "order")
 public class Order {
 
     private int orderID;
@@ -21,29 +29,7 @@ public class Order {
     private String shipPostalCode;
     private String shipCountry;
 
-    public Order(int orderID, Customer customerID,
-                 Employee employeeID, Date orderDate,
-                 Date requiredDate, Date shippedDate,
-                 Shipper shipVia, String freight,
-                 String shipName, String shipAddress,
-                 String shipCity, String shipRegion,
-                 String shipPostalCode, String shipCountry) {
-        this.orderID = orderID;
-        this.customerID = customerID;
-        this.employeeID = employeeID;
-        this.orderDate = orderDate;
-        this.requiredDate = requiredDate;
-        this.shippedDate = shippedDate;
-        this.shipVia = shipVia;
-        this.freight = freight;
-        this.shipName = shipName;
-        this.shipAddress = shipAddress;
-        this.shipCity = shipCity;
-        this.shipRegion = shipRegion;
-        this.shipPostalCode = shipPostalCode;
-        this.shipCountry = shipCountry;
-    }
-
+    //TODO Order details connection
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
@@ -175,4 +161,5 @@ public class Order {
     public void setShipCountry(String shipCountry) {
         this.shipCountry = shipCountry;
     }
+
 }
