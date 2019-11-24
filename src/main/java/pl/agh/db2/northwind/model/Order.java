@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "order")
+@Table(name = "ORDERS")
 public class Order {
 
     private int orderID;
@@ -32,7 +32,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    @Column(name = "orderId", unique = true)
+    @Column(name = "ORDERID", unique = true)
     public int getOrderID() {
         return orderID;
     }
@@ -42,7 +42,7 @@ public class Order {
     }
 
     @ManyToOne
-    @JoinColumn(name = "customerID")
+    @JoinColumn(name = "CUSTOMERID")
     public Customer getCustomerID() {
         return customerID;
     }
@@ -61,7 +61,7 @@ public class Order {
         this.employeeID = employeeID;
     }
 
-    @Column(name = "orderDate")
+    @Column(name = "ORDERDATE")
     public Date getOrderDate() {
         return orderDate;
     }
@@ -70,7 +70,7 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    @Column(name = "requiredDate")
+    @Column(name = "REQUIREDDATE")
     public Date getRequiredDate() {
         return requiredDate;
     }
@@ -79,7 +79,7 @@ public class Order {
         this.requiredDate = requiredDate;
     }
 
-    @Column(name = "shippedDate")
+    @Column(name = "SHIPPEDDATE")
     public Date getShippedDate() {
         return shippedDate;
     }
@@ -98,7 +98,7 @@ public class Order {
         this.shipVia = shipVia;
     }
 
-    @Column(name = "freight")
+    @Column(name = "FREIGHT")
     public String getFreight() {
         return freight;
     }
@@ -107,7 +107,7 @@ public class Order {
         this.freight = freight;
     }
 
-    @Column(name = "shipName")
+    @Column(name = "SHIPNAME")
     public String getShipName() {
         return shipName;
     }
@@ -116,7 +116,7 @@ public class Order {
         this.shipName = shipName;
     }
 
-    @Column(name = "shipAddress")
+    @Column(name = "SHIPADDRESS")
     public String getShipAddress() {
         return shipAddress;
     }
@@ -125,7 +125,7 @@ public class Order {
         this.shipAddress = shipAddress;
     }
 
-    @Column(name = "shipCity")
+    @Column(name = "SHIPCITY")
     public String getShipCity() {
         return shipCity;
     }
@@ -134,7 +134,7 @@ public class Order {
         this.shipCity = shipCity;
     }
 
-    @Column(name = "shipRegion")
+    @Column(name = "SHIPREGION")
     public String getShipRegion() {
         return shipRegion;
     }
@@ -143,7 +143,7 @@ public class Order {
         this.shipRegion = shipRegion;
     }
 
-    @Column(name = "shipPostalCode")
+    @Column(name = "SHIPPOSTALCODE")
     public String getShipPostalCode() {
         return shipPostalCode;
     }
@@ -152,7 +152,7 @@ public class Order {
         this.shipPostalCode = shipPostalCode;
     }
 
-    @Column(name = "shipCountry")
+    @Column(name = "SHIOPCOUNTRY")
     public String getShipCountry() {
         return shipCountry;
     }
