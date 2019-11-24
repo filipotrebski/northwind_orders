@@ -36,7 +36,7 @@ public class Employee {
 
     @Id
     @NotNull
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEEID", unique = true)
     public int getEmployeeId() {
         return employeeId;

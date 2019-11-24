@@ -27,6 +27,7 @@ public class Customer {
 
     @Id
     @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMERID")
     public String getCustomerId() {
         return customerId;

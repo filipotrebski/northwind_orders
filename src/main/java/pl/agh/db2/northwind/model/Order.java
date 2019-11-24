@@ -30,7 +30,7 @@ public class Order {
     private String shipCountry;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     @Column(name = "ORDERID", unique = true)
     public int getOrderID() {

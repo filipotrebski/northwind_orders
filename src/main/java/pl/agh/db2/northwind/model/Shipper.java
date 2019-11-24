@@ -18,7 +18,7 @@ public class Shipper {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SHIPPERID")
     public int getShipperId() {
         return shipperId;

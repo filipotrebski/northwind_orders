@@ -30,7 +30,7 @@ public class Supplier {
 
     @Id // oznaczamy kolumnę z kluczem
     @NotNull // tu że nie może być 0
-    @GeneratedValue // generowany automatycznie jak coś dodamy
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // generowany automatycznie jak coś dodamy
     @Column(name = "SUPPLIERID", unique = true)
     // tu że pole jest kolumną oraż jej właściwości, nzwa oraz ze zaweiera unikalnre wartości
     //te adnotacje tylko przy getterach
