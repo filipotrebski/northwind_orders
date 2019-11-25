@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="surefire plugin added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="change travis config">
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574614460673</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="change travis config">
+      <created>1574710552409</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1574710552410</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +277,7 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix" />
     <MESSAGE value="id genereation strategy update" />
     <MESSAGE value="surefire plugin added" />
-    <option name="LAST_COMMIT_MESSAGE" value="surefire plugin added" />
+    <MESSAGE value="change travis config" />
+    <option name="LAST_COMMIT_MESSAGE" value="change travis config" />
   </component>
 </project>
