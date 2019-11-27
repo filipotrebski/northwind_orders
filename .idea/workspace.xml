@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f00bfd32-4087-4353-8079-eff67f23833e" name="Default" comment="change travis config">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,6 +78,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -207,6 +210,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573486963085</updated>
+      <workItem from="1574884996724" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/filipotrebski/northwind_orders&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;northwind.iml&#10;#&#9;target/classes/application.properties&#10;database fix">
       <created>1574606342993</created>
@@ -264,8 +268,18 @@
       <option name="project" value="LOCAL" />
       <updated>1574710950043</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="change travis config">
+      <created>1574711147246</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574711147246</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
