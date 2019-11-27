@@ -6,7 +6,8 @@ services:
 test:
   adapter: mysql2
   database: northwind
-  username: travis-+
+  username: north
+  password: password
   encoding: utf8
 before_install:
   - sudo apt-get update
