@@ -22,4 +22,11 @@ public class CategoryController {
         Category byCategoryId = categoryDao.getByCategoryId(id);
         return byCategoryId;
     }
+
+    @GetMapping("/category/all")
+    @ResponseBody
+    public List<Category> categoryList(){
+        List<Category> categories = (List<Category>) categoryDao.findAll();
+        return categories;
+    }
 }
