@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import pl.agh.db2.northwind.model.Category;
 import pl.agh.db2.northwind.repository.CategoryDao;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -17,7 +16,7 @@ public class CategoryController {
     @Autowired
     private CategoryDao categoryDao;
 
-    @GetMapping("/category/id")
+    @GetMapping("/category/{id}")
     @ResponseBody
     public Optional<Category> category(@PathVariable Integer id){
         return categoryDao.findById(id);
@@ -25,10 +24,8 @@ public class CategoryController {
 
     @GetMapping("/category")
     @ResponseBody
-    public List<Category> categoryList(){
+    public Iterable<Category> categoryList(){
 
-        List<Category> categories = (List<Category>) categoryDao.findAll();
-
-        return categories;
+        return  categoryDao.findAll();
     }
 }

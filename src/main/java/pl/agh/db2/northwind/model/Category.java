@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -13,17 +12,16 @@ import java.util.Set;
 @Table(name = "CATEGORIES")
 public class Category {
 
-    private int categoryId;
+    private Integer categoryId;
     private String categoryName;
     private String description;
     private String picture;
     private Set<Product> products;
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categoryId", unique = true)
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
@@ -52,7 +50,7 @@ public class Category {
         return products;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 
