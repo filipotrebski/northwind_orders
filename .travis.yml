@@ -12,7 +12,7 @@ test:
 before_install:
 #  - sudo apt-get update
 before_script:
-  - mysql -uroot -ppassword -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password'"
+  - mysql -uroot -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password'"
 
 cache:
   directories:
