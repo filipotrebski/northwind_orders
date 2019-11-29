@@ -25,7 +25,6 @@ public class CategoryController {
     @GetMapping("/category")
     @ResponseBody
     public Iterable<Category> categoryList(){
-
         return  categoryDao.findAll();
     }
 }
