@@ -9,6 +9,4 @@ import pl.agh.db2.northwind.model.Product;
 @Repository
 public interface ProductDao extends CrudRepository<Product, Integer> {
 
-    public Product getProductById(int id);
-    public Product getAllProduct();
 }

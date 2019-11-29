@@ -5,10 +5,16 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.agh.db2.northwind.model.Employee;
 
+import java.util.Optional;
+
 @Transactional
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
-    public Employee getEmployeeById(int id);
-    public Employee getAllEmployee();
+
+    @Override
+    Optional<Employee> findById(Integer integer);
+
+    //    public Employee getById(Integer id);
+//    public Employee getAllEmployee();
 }

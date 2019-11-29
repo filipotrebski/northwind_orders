@@ -9,6 +9,7 @@ import pl.agh.db2.northwind.model.Order;
 import pl.agh.db2.northwind.repository.OrderDao;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class OrderController {
@@ -18,11 +19,8 @@ public class OrderController {
 
     @GetMapping("/order/id")
     @ResponseBody
-    public Object object(@PathVariable Integer id){
-
-        Order byOrder = orderDao.getOrderById(id);
-
-        return byOrder;
+    public Optional<Order> object(@PathVariable Integer id){
+        return orderDao.findById(id);
 
     }
 

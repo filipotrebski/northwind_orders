@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
-    private int employeeId;
+    private Integer id;
     private String lastName;
     private String firstName;
     private String title;
@@ -29,7 +29,7 @@ public class Employee {
     private String extension;
     private String photo;
     private String notes;
-    private int reportsto;
+    private Integer reportsto;
     private String photoPath;
     private Employee supervisor;
     private List<Employee> subordinates;
@@ -38,8 +38,8 @@ public class Employee {
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEEID", unique = true)
-    public int getEmployeeId() {
-        return employeeId;
+    public Integer getId() {
+        return id;
     }
 
     @NotNull
@@ -120,7 +120,7 @@ public class Employee {
     }
 
     @Column(name = "REPORTSTO", insertable = false, updatable = false)
-    public int getReportsto() {
+    public Integer getReportsto() {
         return reportsto;
     }
 
@@ -144,8 +144,8 @@ public class Employee {
     }
 
 
-    private void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    private void setId(int id) {
+        this.id = id;
     }
 
     private void setLastName(String lastName) {
@@ -208,7 +208,7 @@ public class Employee {
         this.notes = notes;
     }
 
-    private void setReportsto(int reportsTo) {
+    private void setReportsto(Integer reportsTo) {
         this.reportsto = reportsTo;
     }
 

@@ -9,6 +9,7 @@ import pl.agh.db2.northwind.model.Product;
 import pl.agh.db2.northwind.repository.ProductDao;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -18,11 +19,9 @@ public class ProductController {
 
     @GetMapping("/product/id")
     @ResponseBody
-    public Product product(@PathVariable Integer id){
+    public Optional<Product> product(@PathVariable Integer id){
 
-        Product byProduct = productDao.getProductById(id);
-
-        return byProduct;
+        return  productDao.findById(id);
 
     }
 

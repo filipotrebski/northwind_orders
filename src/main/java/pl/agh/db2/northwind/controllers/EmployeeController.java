@@ -9,6 +9,7 @@ import pl.agh.db2.northwind.model.Employee;
 import pl.agh.db2.northwind.repository.EmployeeDao;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class EmployeeController {
@@ -18,11 +19,8 @@ public class EmployeeController {
 
     @GetMapping("/employee/id")
     @ResponseBody
-    public Employee employee(@PathVariable Integer id){
-
-        Employee byEmployee = employeeDao.getEmployeeById(id);
-
-        return byEmployee;
+    public Optional<Employee> employee(@PathVariable Integer id){
+        return employeeDao.findById(id);
 
     }
 

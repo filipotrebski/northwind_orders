@@ -26,7 +26,7 @@ public class CategoryController {
 
     }
 
-    @GetMapping("/category/all")
+    @GetMapping("/category")
     @ResponseBody
     public List<Category> categoryList(){
 

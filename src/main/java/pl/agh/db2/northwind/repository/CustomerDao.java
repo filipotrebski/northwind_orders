@@ -5,7 +5,24 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.agh.db2.northwind.model.Customer;
 
+import java.util.Optional;
+
 @Transactional
 @Repository
 public interface CustomerDao extends CrudRepository<Customer, Integer> {
+
+    @Override
+    Optional<Customer> findById(Integer integer);
+
+    @Override
+    Iterable<Customer> findAll();
+
+    @Override
+    long count();
+
+    @Override
+    <S extends Customer> S save(S s);
+
+    @Override
+    void deleteById(Integer integer);
 }

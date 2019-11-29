@@ -9,6 +9,5 @@ import pl.agh.db2.northwind.model.Order;
 @Repository
 public interface OrderDao extends CrudRepository<Order, Integer> {
 
-    public Order getOrderById(int id);
-    public Order getAllOrder();
+
 }
