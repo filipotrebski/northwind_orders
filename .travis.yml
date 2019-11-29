@@ -11,8 +11,6 @@ test:
   encoding: utf8
 before_install:
 #  - sudo apt-get update
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS northwind;'
-  - mysql -uroot -e "select * from information_schema.TABLES limit 1"
 
 cache:
   directories:
