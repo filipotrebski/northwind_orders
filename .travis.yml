@@ -12,3 +12,5 @@ test:
 before_install:
   - sudo apt-get update
   - mysql -e 'CREATE DATABASE IF NOT EXISTS northwind;'
+  - mysql -uroot -ppassword -e "select * from information_schema.TABLES limit 1"
+
