@@ -8,4 +8,7 @@ import pl.agh.db2.northwind.model.Employee;
 @Transactional
 @Repository
 public interface EmployeeDao extends CrudRepository<Employee, Integer> {
+
+    public Employee getEmployeeById(int id);
+    public Employee getAllEmployee();
 }

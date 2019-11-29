@@ -8,4 +8,6 @@ import pl.agh.db2.northwind.model.OrderDetails;
 @Transactional
 @Repository
 public interface OrderDetailsDao extends CrudRepository<OrderDetails, Integer> {
+
+
 }

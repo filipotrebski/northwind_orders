@@ -16,17 +16,22 @@ public class CategoryController {
     @Autowired
     private CategoryDao categoryDao;
 
-    @GetMapping("/category/{id}")
+    @GetMapping("/category/id")
     @ResponseBody
     public Category category(@PathVariable Integer id){
-        Category byCategoryId = categoryDao.getByCategoryId(id);
-        return byCategoryId;
+
+        Category byCategory = categoryDao.getByCategoryId(id);
+
+        return byCategory;
+
     }
 
     @GetMapping("/category/all")
     @ResponseBody
     public List<Category> categoryList(){
+
         List<Category> categories = (List<Category>) categoryDao.findAll();
+
         return categories;
     }
 }
