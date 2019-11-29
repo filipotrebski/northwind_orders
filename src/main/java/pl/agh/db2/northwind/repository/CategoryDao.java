@@ -9,6 +9,4 @@ import pl.agh.db2.northwind.model.Category;
 @Repository
 public interface CategoryDao extends CrudRepository<Category,Integer> {
 
-    public Category getByCategory(String description);
-    public Category getByCategoryId(int id);
 }
