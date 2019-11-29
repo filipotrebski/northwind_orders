@@ -15,7 +15,7 @@ import java.util.Optional;
 public class CustomerController {
 
     @Autowired
-    CustomerDao customerDao;
+    CustomerDao customerDaoX;
 
     @GetMapping("/customer")
     @ResponseBody
