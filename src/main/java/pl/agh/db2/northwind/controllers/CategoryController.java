@@ -9,6 +9,7 @@ import pl.agh.db2.northwind.model.Category;
 import pl.agh.db2.northwind.repository.CategoryDao;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CategoryController {
@@ -18,12 +19,8 @@ public class CategoryController {
 
     @GetMapping("/category/id")
     @ResponseBody
-    public Category category(@PathVariable Integer id){
-
-        Category byCategory = categoryDao.getByCategoryId(id);
-
-        return byCategory;
-
+    public Optional<Category> category(@PathVariable Integer id){
+        return categoryDao.findById(id);
     }
 
     @GetMapping("/category")
