@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "SHIPPERS")
 public class Shipper {
-    private int shipperId;
+    private Integer shipperId;
     private String companyName;
     private String phone;
     private List<Order> orders;
@@ -20,7 +20,7 @@ public class Shipper {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SHIPPERID")
-    public int getShipperId() {
+    public Integer getShipperId() {
         return shipperId;
     }
 
@@ -48,7 +48,7 @@ public class Shipper {
         this.orders = orders;
     }
 
-    public void setShipperId(int shipperId) {
+    public void setShipperId(Integer shipperId) {
         this.shipperId = shipperId;
     }
 
