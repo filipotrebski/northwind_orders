@@ -83,6 +83,12 @@
             <artifactId>surefire-logger-api</artifactId>
             <version>3.0.0-M4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+            <version>2.3.4.726</version>
+        </dependency>
+
     </dependencies>
 
     <build>
