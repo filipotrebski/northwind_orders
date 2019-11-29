@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
 @Entity // adnotacja że klasa będzię encją bazy danych
 @Table(name = "SUPPLIERS") // tablica i jej właściwości
 public class Supplier {
-    private int supplierID;
+    private Integer supplierID;
     private String companyName;
     private String contactName;
     private String contactTitle;
@@ -29,12 +28,12 @@ public class Supplier {
 
 
     @Id // oznaczamy kolumnę z kluczem
-    @NotNull // tu że nie może być 0
+    // tu że nie może być 0
     @GeneratedValue(strategy = GenerationType.IDENTITY) // generowany automatycznie jak coś dodamy
     @Column(name = "SUPPLIERID", unique = true)
     // tu że pole jest kolumną oraż jej właściwości, nzwa oraz ze zaweiera unikalnre wartości
     //te adnotacje tylko przy getterach
-    public int getSupplierID() {
+    public Integer getSupplierID() {
         return supplierID;
     }
 
@@ -105,7 +104,7 @@ public class Supplier {
     }
 
 
-    public void setSupplierID(int supplierID) {
+    public void setSupplierID(Integer supplierID) {
         this.supplierID = supplierID;
     }
 

@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +12,7 @@ import java.util.List;
 @Table(name = "ORDERS")
 public class Order {
 
-    private int orderID;
+    private Integer orderID;
     private Customer customerID;
     private Employee employeeID;
     private Date orderDate;
@@ -31,13 +29,12 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull
     @Column(name = "ORDERID", unique = true)
-    public int getOrderID() {
+    public Integer getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(int orderID) {
+    public void setOrderID(Integer orderID) {
         this.orderID = orderID;
     }
 
