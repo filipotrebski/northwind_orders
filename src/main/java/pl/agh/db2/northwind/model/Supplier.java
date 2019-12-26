@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @Entity // adnotacja że klasa będzię encją bazy danych
 @Table(name = "SUPPLIERS") // tablica i jej właściwości
@@ -25,7 +25,6 @@ public class Supplier {
     private String fax;
     private String homePage;
     private List<Product> products = new ArrayList<>();
-
 
     @Id // oznaczamy kolumnę z kluczem
     // tu że nie może być 0

@@ -12,6 +12,8 @@ import pl.agh.db2.northwind.repository.CategoryDao;
 import java.util.HashSet;
 import java.util.Optional;
 
+import static org.assertj.core.api.Assertions.*;
+
 @TestPropertySource("classpath:application-test.properties")
 @SpringBootTest
 class NorthwindApplicationTests {
@@ -28,7 +30,8 @@ class NorthwindApplicationTests {
         Category save = categoryDao.save(s);
 
         Optional<Category> loaded = categoryController.category(save.getCategoryId());
-        Assertions.assertThat(loaded).isEqualTo(Optional.of(new Category(save.getCategoryId(), "name", "desc", "pic", new HashSet<>())));
+        loaded.toString();
+        assertThat(loaded).isEqualTo(Optional.of(new Category(save.getCategoryId(), "name", "desc", "pic", new HashSet<>())));
     }
 
 }

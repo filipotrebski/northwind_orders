@@ -1,13 +1,17 @@
 package pl.agh.db2.northwind.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -26,6 +30,7 @@ public class Order {
     private String shipRegion;
     private String shipPostalCode;
     private String shipCountry;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

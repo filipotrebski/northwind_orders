@@ -1,13 +1,18 @@
 package pl.agh.db2.northwind.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "CUSTOMERS")
 public class Customer {
@@ -22,7 +27,7 @@ public class Customer {
     private String country;
     private String phone;
     private String fax;
-    private List<Order> orders;
+//    private List<Order> orders;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -81,61 +86,61 @@ public class Customer {
         return fax;
     }
 
-    @OneToMany (
-            targetEntity = Order.class,
-            mappedBy = "orderID",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    public List<Order> getOrders() {
-        return orders;
-    }
+//    @OneToMany (
+//            targetEntity = Order.class,
+//            mappedBy = "orderID",
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.EAGER
+//    )
+//    public List<Order> getOrders() {
+//        return orders;
+//    }
 
-    private void setCustomerId(Integer customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
-    private void setCompanyName(String companyName) {
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
-    private void setContactName(String contactName) {
+    public void setContactName(String contactName) {
         this.contactName = contactName;
     }
 
-    private void setContactTitle(String contactTitle) {
+    public void setContactTitle(String contactTitle) {
         this.contactTitle = contactTitle;
     }
 
-    private void setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
-    private void setCity(String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
-    private void setRegion(String region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
-    private void setPostalCode(String postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
-    private void setCountry(String country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
-    private void setPhone(String phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    private void setFax(String fax) {
+    public void setFax(String fax) {
         this.fax = fax;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
+//    public void setOrders(List<Order> orders) {
+//        this.orders = orders;
+//    }
 }

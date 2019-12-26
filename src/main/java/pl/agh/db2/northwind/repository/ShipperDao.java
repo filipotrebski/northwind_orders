@@ -5,7 +5,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.agh.db2.northwind.model.Shipper;
 
+import java.util.Optional;
+
 @Transactional
 @Repository
 public interface ShipperDao extends CrudRepository<Shipper, Integer> {
+
+    @Override
+    Optional<Shipper> findById(Integer integer);
 }

@@ -17,7 +17,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
 
-    @GetMapping("/employee/id")
+    @GetMapping("/employee/{id}")
     @ResponseBody
     public Optional<Employee> employee(@PathVariable Integer id){
         return employeeDao.findById(id);
