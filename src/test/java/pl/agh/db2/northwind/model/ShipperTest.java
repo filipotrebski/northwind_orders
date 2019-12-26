@@ -36,7 +36,7 @@ public class ShipperTest {
 
         //then
         
-        Optional<Shipper> loaded = shipperController.grtShipperById(save.getShipperId());
+        Optional<Shipper> loaded = shipperController.getShipperById(save.getShipperId());
         Assertions.assertThat(loaded).isEqualTo((Optional.of(new Shipper(save.getShipperId(),"Super Delivery Corp.", "123456789"))));
     }
 }

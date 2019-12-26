@@ -1,7 +1,9 @@
 package pl.agh.db2.northwind.model;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -9,6 +11,9 @@ import java.util.List;
 
 //@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity // adnotacja że klasa będzię encją bazy danych
 @Table(name = "SUPPLIERS") // tablica i jej właściwości
 public class Supplier {
@@ -24,7 +29,7 @@ public class Supplier {
     private String phone;
     private String fax;
     private String homePage;
-    private List<Product> products = new ArrayList<>();
+//    private List<Product> products = new ArrayList<>();
 
     @Id // oznaczamy kolumnę z kluczem
     // tu że nie może być 0
@@ -92,15 +97,15 @@ public class Supplier {
     }
 
     //Określenie powiązania pomędzy tabelami -> jeden supplier wiele produtów, od drugiej też mapujemy
-    @OneToMany(
-            targetEntity = Product.class, //klasa docelowa
-            mappedBy = "supplierId", // mapujemy po supplierID
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
-    public List<Product> getProducts() {
-        return products;
-    }
+//    @OneToMany(
+//            targetEntity = Product.class, //klasa docelowa
+//            mappedBy = "supplierId", // mapujemy po supplierID
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY
+//    )
+//    public List<Product> getProducts() {
+//        return products;
+//    }
 
 
     public void setSupplierID(Integer supplierID) {
@@ -151,7 +156,7 @@ public class Supplier {
         this.homePage = homePage;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 }
