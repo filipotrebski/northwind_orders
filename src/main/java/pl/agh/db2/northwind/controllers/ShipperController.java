@@ -25,5 +25,5 @@ public class ShipperController {
 
     @GetMapping("/shipper/{id}")
     @ResponseBody
-    public Optional<Shipper> grtShipperById(@PathVariable Integer id){return shipperDao.findById(id);}
+    public Optional<Shipper> getShipperById(@PathVariable Integer id){return shipperDao.findById(id);}
 }
