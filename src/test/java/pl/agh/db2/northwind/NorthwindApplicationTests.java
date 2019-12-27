@@ -26,12 +26,12 @@ class NorthwindApplicationTests {
 
     @Test
     void contextLoads() {
-        Category s = new Category(null, "name", "desc", "pic", new HashSet<>());
+        Category s = new Category(null, "name", "desc", "pic");
         Category save = categoryDao.save(s);
 
         Optional<Category> loaded = categoryController.category(save.getCategoryId());
         loaded.toString();
-        assertThat(loaded).isEqualTo(Optional.of(new Category(save.getCategoryId(), "name", "desc", "pic", new HashSet<>())));
+        assertThat(loaded).isEqualTo(Optional.of(new Category(save.getCategoryId(), "name", "desc", "pic")));
     }
 
 }

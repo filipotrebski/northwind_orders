@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,7 +19,7 @@ public class Category {
     private String categoryName;
     private String description;
     private String picture;
-    private Set<Product> products;
+//    private Set<Product> products;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,15 +43,15 @@ public class Category {
         return picture;
     }
 
-    @OneToMany(
-            targetEntity = Product.class,
-            mappedBy = "productId",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
-    )
-    public Set<Product> getProducts() {
-        return products;
-    }
+//    @OneToMany(
+//            targetEntity = Product.class,
+//            mappedBy = "productId",
+//            cascade = CascadeType.ALL,
+//            fetch = FetchType.EAGER
+//    )
+//    public Set<Product> getProducts() {
+//        return products;
+//    }
 
     public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
@@ -70,7 +69,7 @@ public class Category {
         this.picture = picture;
     }
 
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
+//    public void setProducts(Set<Product> products) {
+//        this.products = products;
+//    }
 }
