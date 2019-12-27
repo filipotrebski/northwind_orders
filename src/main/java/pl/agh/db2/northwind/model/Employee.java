@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class Employee {
     private Integer reportsto;
     private String photoPath;
     private Employee supervisor;
-    private List<Employee> subordinates;
+    private List<Employee> subordinates = new ArrayList<>();
 
     @Id
     @NotNull
@@ -227,4 +228,5 @@ public class Employee {
     private void setSubordinates(List<Employee> subordinates) {
         this.subordinates = subordinates;
     }
+
 }
