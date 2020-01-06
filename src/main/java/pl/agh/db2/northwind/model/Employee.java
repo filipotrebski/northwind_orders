@@ -7,9 +7,8 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +17,7 @@ import java.util.List;
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
-    private Integer id;
+    private Integer employeeId;
     private String lastName;
     private String firstName;
     private String title;
@@ -36,15 +35,13 @@ public class Employee {
     private String notes;
     private Integer reportsto;
     private String photoPath;
-    private Employee supervisor;
-    private List<Employee> subordinates = new ArrayList<>();
+    private Set<Employee> subordinates;
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEEID", unique = true)
-    public Integer getId() {
-        return id;
+    public Integer getEmployeeId() {
+        return employeeId;
     }
 
     @NotNull
@@ -134,23 +131,15 @@ public class Employee {
         return photoPath;
     }
 
-    @ManyToOne(
-            targetEntity = Employee.class,
-            fetch = FetchType.LAZY
-    )
-    @JoinColumn(name = "supervisor")
-    public Employee getSupervisor() {
-        return supervisor;
-    }
 
-    @OneToMany(mappedBy = "supervisor")
-    public List<Employee> getSubordinates() {
+    @OneToMany(mappedBy = "employeeId")
+    public Set<Employee> getSubordinates() {
         return subordinates;
     }
 
 
-    private void setId(int id) {
-        this.id = id;
+    private void setEmployeeId(int id) {
+        this.employeeId = id;
     }
 
     private void setLastName(String lastName) {
@@ -221,11 +210,8 @@ public class Employee {
         this.photoPath = photoPath;
     }
 
-    private void setSupervisor(Employee supervisor) {
-        this.supervisor = supervisor;
-    }
 
-    private void setSubordinates(List<Employee> subordinates) {
+    private void setSubordinates(Set<Employee> subordinates) {
         this.subordinates = subordinates;
     }
 

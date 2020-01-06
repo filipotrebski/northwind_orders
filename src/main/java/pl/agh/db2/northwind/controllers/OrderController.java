@@ -17,9 +17,9 @@ public class OrderController {
     @Autowired
     private OrderDao orderDao;
 
-    @GetMapping("/order/id")
+    @GetMapping("/order/{id}")
     @ResponseBody
-    public Optional<Order> object(@PathVariable Integer id){
+    public Optional<Order> getOrder(@PathVariable Integer id){
         return orderDao.findById(id);
 
     }
