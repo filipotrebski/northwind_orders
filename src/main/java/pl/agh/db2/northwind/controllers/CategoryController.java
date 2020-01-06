@@ -10,6 +10,7 @@ import pl.agh.db2.northwind.repository.CategoryDao;
 
 import java.util.Optional;
 
+
 @Controller
 public class CategoryController {
 
