@@ -23,5 +23,5 @@ public interface ShipperDao extends CrudRepository<Shipper, Integer> {
     public Shipper save(Shipper s);
 
     @Override
-    public void delete(Shipper s);
+    public void delete(Shipper s); 
 }
