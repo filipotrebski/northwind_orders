@@ -26,4 +26,21 @@ public class ShipperController {
     @GetMapping("/shipper/{id}")
     @ResponseBody
     public Optional<Shipper> getShipperById(@PathVariable Integer id){return shipperDao.findById(id);}
+
+    @GetMapping("/shipper/all")
+    @ResponseBody
+    public String allShipper(){
+
+        StringBuilder response = new StringBuilder();
+
+        for(Shipper s: shipperDao.showAllShipper()){
+
+            response.append(s.getShipperId()).append(" ")
+                    .append(s.getCompanyName()).append(" ")
+                    .append(s.getPhone()).append(" ")
+                    .append("<br>");
+        }
+
+        return response.toString();
+    }
 }

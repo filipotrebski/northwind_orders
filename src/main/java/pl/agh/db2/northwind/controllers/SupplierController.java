@@ -28,4 +28,30 @@ public class SupplierController {
     public Optional<Supplier> getSupplierById(@PathVariable Integer id) {
         return supplierDao.findById(id);
     }
+
+    @GetMapping("/supplier/all")
+    @ResponseBody
+    public String allCategory(){
+
+        StringBuilder response = new StringBuilder();
+
+        for(Supplier s: supplierDao.showAllSuppliers()){
+
+            response.append(s.getSupplierID()).append(" ")
+                    .append(s.getCompanyName()).append(" ")
+                    .append(s.getAddress()).append(" ")
+                    .append(s.getCity()).append(" ")
+                    .append(s.getContactName()).append(" ")
+                    .append(s.getContactTitle()).append(" ")
+                    .append(s.getSupplierID()).append(" ")
+                    .append(s.getCountry()).append(" ")
+                    .append(s.getFax()).append(" ")
+                    .append(s.getPhone()).append(" ")
+                    .append(s.getPostalCode()).append(" ")
+                    .append(s.getRegion()).append(" ")
+                    .append("<br>");
+        }
+
+        return response.toString();
+    }
 }

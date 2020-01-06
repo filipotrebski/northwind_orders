@@ -9,4 +9,16 @@ public class CategoryService {
     @Autowired
     private CategoryDao categoryDao;
 
+    public Category save(Category c) {
+
+        categoryDao.save(c);
+
+        return c;
+    }
+
+    public void delete(Category c){
+
+        categoryDao.delete(c);
+    }
+
 }

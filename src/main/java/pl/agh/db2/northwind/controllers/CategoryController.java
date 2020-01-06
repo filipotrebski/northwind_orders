@@ -27,4 +27,21 @@ public class CategoryController {
     public Iterable<Category> categoryList(){
         return  categoryDao.findAll();
     }
+
+    @GetMapping("/category/all")
+    @ResponseBody
+    public String allCategory(){
+
+        StringBuilder response = new StringBuilder();
+
+        for(Category c: categoryDao.showAllCategory()){
+
+            response.append(c.getCategoryId()).append(" ")
+                    .append(c.getCategoryName()).append(" ")
+                    .append(c.getDescription()).append(" ")
+                    .append("<br>");
+        }
+
+        return response.toString();
+    }
 }
