@@ -22,5 +22,5 @@ public interface CategoryDao extends JpaRepository<Category,Integer> {
 
     @Override
     public void delete(Category c);
-}
+} 
 
