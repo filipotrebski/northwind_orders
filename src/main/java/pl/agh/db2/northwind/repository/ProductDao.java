@@ -20,4 +20,4 @@ public interface ProductDao extends CrudRepository<Product, Integer> {
 
     @Override
     public void delete(Product p);
-}
+} 
