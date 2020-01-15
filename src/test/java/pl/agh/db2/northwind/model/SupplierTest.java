@@ -1,6 +1,5 @@
 package pl.agh.db2.northwind.model;
 
-import jdk.nashorn.internal.runtime.regexp.joni.constants.OPCode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +8,7 @@ import org.springframework.test.context.TestPropertySource;
 import pl.agh.db2.northwind.controllers.SupplierController;
 import pl.agh.db2.northwind.repository.SupplierDao;
 
-import java.util.ArrayList;
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @TestPropertySource("classpath:application-test.properties")
 @SpringBootTest
