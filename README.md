@@ -16,8 +16,23 @@ Technologie
  - Swagger
 
 Uruchamianie bazy przy pomocy docker'a
+
+Stworzenie kontenera na bazie mysql 5
 ```shell script
-docker run --rm --name some-mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql:5.7
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql:5.7
+```
+Podłączenie do kontenera
+```shell script
+docker exec -it some-mysql /bin/bash
+```
+Logowanie do kontenera
+```shell script
+mysql -uroot -ppassword
+```
+
+Stworzenie bazy danych w kontenerze
+```shell script
+create database northwind;
 ```
 
 Plan
