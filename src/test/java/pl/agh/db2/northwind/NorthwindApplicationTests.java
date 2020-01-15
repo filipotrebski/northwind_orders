@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import pl.agh.db2.northwind.controllers.CategoryController;
+import pl.agh.db2.northwind.mapper.CategoryMapper;
 import pl.agh.db2.northwind.model.Category;
 import pl.agh.db2.northwind.repository.CategoryDao;
 
@@ -24,12 +25,15 @@ class NorthwindApplicationTests {
     @Autowired
     private CategoryDao categoryDao;
 
+    @Autowired
+    private CategoryMapper categoryMapper;
+
     @Test
     void contextLoads() {
         Category s = new Category(null, "name", "desc", "pic");
         Category save = categoryDao.save(s);
 
-        Optional<Category> loaded = categoryController.category(save.getCategoryId());
+        Optional<Category> loaded = categoryDao.findById(save.getCategoryId());
         loaded.toString();
         assertThat(loaded).isEqualTo(Optional.of(new Category(save.getCategoryId(), "name", "desc", "pic")));
     }

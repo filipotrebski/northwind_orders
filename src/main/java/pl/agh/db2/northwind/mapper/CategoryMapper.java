@@ -1,6 +1,5 @@
 package pl.agh.db2.northwind.mapper;
 
-import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Component;
 import pl.agh.db2.northwind.model.Category;
 import pl.agh.db2.northwind.model.CategoryDto;
@@ -11,7 +10,7 @@ import java.util.stream.Collectors;
 @Component
 public class CategoryMapper {
 
-    public Category mapToCategory(final CategoryDto categoryDto){
+    public Category mapToCategory(final CategoryDto categoryDto) {
         return new Category(
                 categoryDto.getCategoryId(),
                 categoryDto.getCategoryName(),
@@ -31,7 +30,7 @@ public class CategoryMapper {
 
     public List<CategoryDto> maoToCategoryDyoList(final List<Category> categoryList) {
         return categoryList.stream()
-                .map( t -> new CategoryDto(t.getCategoryId(),t.getCategoryName(),t.getDescription(),t.getPicture()))
+                .map(t -> new CategoryDto(t.getCategoryId(), t.getCategoryName(), t.getDescription(), t.getPicture()))
                 .collect(Collectors.toList());
     }
 }
