@@ -1,11 +1,13 @@
 package pl.agh.db2.northwind.mapper;
 
+import org.springframework.stereotype.Component;
 import pl.agh.db2.northwind.model.Customer;
 import pl.agh.db2.northwind.model.CustomerDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class CustomerMapper {
 
     public Customer mapToCustomer(final CustomerDto customerDto){
