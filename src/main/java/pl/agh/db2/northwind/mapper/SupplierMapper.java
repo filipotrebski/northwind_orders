@@ -27,7 +27,7 @@ public class SupplierMapper {
                 supplierDto.getHomePage()
         );
     }
-    public SupplierDto mapToCategoryDto(final Supplier supplier) {
+    public SupplierDto mapToSupplierDto(final Supplier supplier) {
         return new SupplierDto(
                 supplier.getSupplierID(),
                 supplier.getCompanyName(),
