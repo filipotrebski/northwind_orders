@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -35,7 +36,7 @@ public class Employee {
     private String notes;
     private Integer reportsto;
     private String photoPath;
-    private Set<Employee> subordinates;
+    //private Set<Integer> subordinates = new HashSet<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -132,10 +133,10 @@ public class Employee {
     }
 
 
-    @OneToMany(mappedBy = "employeeId")
-    public Set<Employee> getSubordinates() {
-        return subordinates;
-    }
+    //@OneToMany(mappedBy = "employeeId")
+//    public Set getSubordinates() {
+//        return subordinates;
+//    }
 
 
     private void setEmployeeId(int id) {
@@ -211,8 +212,8 @@ public class Employee {
     }
 
 
-    private void setSubordinates(Set<Employee> subordinates) {
-        this.subordinates = subordinates;
-    }
+//    private void setSubordinates(Set subordinates) {
+//        this.subordinates = subordinates;
+//    }
 
 }

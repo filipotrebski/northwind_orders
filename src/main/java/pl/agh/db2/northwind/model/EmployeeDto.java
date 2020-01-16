@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -29,5 +30,5 @@ public class EmployeeDto {
     private String notes;
     private Integer reportsto;
     private String photoPath;
-    private Set<Employee> subordinates;
+    //private Set<Integer> subordinates = new HashSet<>();
 }

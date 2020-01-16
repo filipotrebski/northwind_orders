@@ -1,5 +1,6 @@
 package pl.agh.db2.northwind.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -11,14 +12,7 @@ import java.util.Optional;
 
 @Transactional
 @Repository
-public interface EmployeeDao extends CrudRepository<Employee, Integer> {
-
-
-    @Override
-    Optional<Employee> findById(Integer integer);
-
-    @Query(value = "SELECT e FROM Employee e")
-    public List<Employee> showAllEmployee();
+public interface EmployeeDao extends JpaRepository<Employee, Integer> {
 
     @Override
     public Employee save(Employee e);

@@ -34,7 +34,7 @@ public class CustomerTest {
 
         //then
         Integer id = save.getCustomerId();
-        Optional<Customer> loaded = customerController.getCustomerById(save.getCustomerId());
+        Optional<Customer> loaded = customerDao.findById(save.getCustomerId());
         assertThat(loaded).isEqualTo(Optional.of(new Customer(save.getCustomerId(), "Chip corp", "Joe Black","Mr", "Colt Ave.", "Chicago", "IL", "425664","USA", "123123123", "123123123")));
 
     }

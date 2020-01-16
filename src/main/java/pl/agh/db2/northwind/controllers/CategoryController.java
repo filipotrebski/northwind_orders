@@ -12,7 +12,7 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("v1/")
+@RequestMapping("/v1")
 public class CategoryController {
 
     @Autowired
@@ -28,7 +28,7 @@ public class CategoryController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/category")
     public List<CategoryDto> getGategories() {
-        return categoryMapper.maoToCategoryDyoList(dbService.getCategoryDao().findAll());
+        return categoryMapper.mapToCategoryDtoList(dbService.getCategoryDao().findAll());
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/category/{id}")
@@ -37,7 +37,7 @@ public class CategoryController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/category")
-    private CategoryDto updateCategory(@RequestBody CategoryDto categoryDto) {
+    public CategoryDto updateCategory(@RequestBody CategoryDto categoryDto) {
         return categoryMapper.mapToCategoryDto(dbService.getCategoryDao().save(categoryMapper.mapToCategory(categoryDto)));
     }
 
