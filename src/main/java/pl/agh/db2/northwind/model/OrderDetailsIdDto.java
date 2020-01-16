@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Getter
 public class OrderDetailsIdDto {
 
-    private Order orderId;
-    private Product productId;
+    private Integer orderId;
+    private Integer productId;
 }

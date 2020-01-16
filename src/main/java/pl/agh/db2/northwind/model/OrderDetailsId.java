@@ -7,30 +7,30 @@ import java.io.Serializable;
 //https://vladmihalcea.com/the-best-way-to-map-a-composite-primary-key-with-jpa-and-hibernate/
 
 public class OrderDetailsId implements Serializable {
-    private Order orderId;
-    private Product productId;
+    private Integer orderId;
+    private Integer productId;
 
     public OrderDetailsId() {
     }
 
-    public OrderDetailsId(Order orderId, Product productId) {
+    public OrderDetailsId(Integer orderId, Integer productId) {
         this.orderId = orderId;
         this.productId = productId;
     }
 
-    public Order getOrderId() {
+    public Integer getOrderId() {
         return orderId;
     }
 
-    public Product getProductId() {
+    public Integer getProductId() {
         return productId;
     }
 
-    public void setOrderId(Order orderId) {
+    public void setOrderId(Integer orderId) {
         this.orderId = orderId;
     }
 
-    public void setProductId(Product productId) {
+    public void setProductId(Integer productId) {
         this.productId = productId;
     }
 

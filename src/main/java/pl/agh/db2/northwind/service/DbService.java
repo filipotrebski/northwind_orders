@@ -1,6 +1,7 @@
 package pl.agh.db2.northwind.service;
 
 import lombok.Getter;
+import pl.agh.db2.northwind.model.OrderDetails;
 import pl.agh.db2.northwind.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,9 @@ public class DbService {
 
     @Autowired
     private OrderDao orderDao;
+
+    @Autowired
+    private OrderDetailsDao detailsDao;
 
     @Autowired
     private ProductDao productDao;
