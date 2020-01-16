@@ -1,9 +1,6 @@
 package pl.agh.db2.northwind.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,9 +9,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Getter
+@Setter
 @EqualsAndHashCode
 @Entity(name = "CUSTOMERS")
-@Table(n?ame = "CUSTOMERS")
 public class Customer {
 
     @Id

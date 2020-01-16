@@ -17,202 +17,66 @@ import java.util.Set;
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
-    private Integer employeeId;
-    private String lastName;
-    private String firstName;
-    private String title;
-    private String titleOfCourtesy;
-    private Date birthDate;
-    private Date hireDate;
-    private String address;
-    private String city;
-    private String region;
-    private String postalCode;
-    private String country;
-    private String homePhone;
-    private String extension;
-    private String photo;
-    private String notes;
-    private Integer reportsto;
-    private String photoPath;
-    private Set<Employee> subordinates;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "EMPLOYEEID", unique = true)
-    public Integer getEmployeeId() {
-        return employeeId;
-    }
+    private Integer employeeId;
 
     @NotNull
     @Column(name = "LASTNAME")
-    public String getLastName() {
-        return lastName;
-    }
+    private String lastName;
 
     @NotNull
     @Column(name = "FIRSTNAME")
-    public String getFirstName() {
-        return firstName;
-    }
+    private String firstName;
 
     @Column(name = "TITLE")
-    public String getTitle() {
-        return title;
-    }
+    private String title;
 
     @Column(name = "TITLEOFCOURTESY")
-    public String getTitleOfCourtesy() {
-        return titleOfCourtesy;
-    }
+    private String titleOfCourtesy;
 
     @Column(name = "BIRTHDATE")
-    public Date getBirthDate() {
-        return birthDate;
-    }
+    private Date birthDate;
 
     @Column(name = "HIREDATE")
-    public Date getHireDate() {
-        return hireDate;
-    }
+    private Date hireDate;
 
     @Column(name = "ADDRESS")
-    public String getAddress() {
-        return address;
-    }
+    private String address;
 
     @Column(name = "CITY")
-    public String getCity() {
-        return city;
-    }
+    private String city;
 
     @Column(name = "REGION")
-    public String getRegion() {
-        return region;
-    }
+    private String region;
 
     @Column(name = "POSTALCODE")
-    public String getPostalCode() {
-        return postalCode;
-    }
+    private String postalCode;
 
     @Column(name = "COUNTRY")
-    public String getCountry() {
-        return country;
-    }
+    private String country;
 
     @Column(name = "HOMEPHONE")
-    public String getHomePhone() {
-        return homePhone;
-    }
+    private String homePhone;
 
     @Column(name = "EXTENSION")
-    public String getExtension() {
-        return extension;
-    }
+    private String extension;
 
     @Column(name = "PHOTO")
-    public String getPhoto() {
-        return photo;
-    }
+    private String photo;
 
     @Column(name = "NOTES")
-    public String getNotes() {
-        return notes;
-    }
+    private String notes;
 
     @Column(name = "REPORTSTO", insertable = false, updatable = false)
-    public Integer getReportsto() {
-        return reportsto;
-    }
+    private Integer reportsto;
 
     @Column(name = "PHOTOPATH")
-    public String getPhotoPath() {
-        return photoPath;
-    }
-
+    private String photoPath;
 
     @OneToMany(mappedBy = "employeeId")
-    public Set<Employee> getSubordinates() {
-        return subordinates;
-    }
-
-
-    private void setEmployeeId(int id) {
-        this.employeeId = id;
-    }
-
-    private void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    private void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    private void setTitle(String title) {
-        this.title = title;
-    }
-
-    private void setTitleOfCourtesy(String titleOfCourtesy) {
-        this.titleOfCourtesy = titleOfCourtesy;
-    }
-
-    private void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    private void setHireDate(Date hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    private void setAddress(String address) {
-        this.address = address;
-    }
-
-    private void setCity(String city) {
-        this.city = city;
-    }
-
-    private void setRegion(String region) {
-        this.region = region;
-    }
-
-    private void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    private void setCountry(String country) {
-        this.country = country;
-    }
-
-    private void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
-    }
-
-    private void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    private void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    private void setNotes(String notes) {
-        this.notes = notes;
-    }
-
-    private void setReportsto(Integer reportsTo) {
-        this.reportsto = reportsTo;
-    }
-
-    private void setPhotoPath(String photoPath) {
-        this.photoPath = photoPath;
-    }
-
-
-    private void setSubordinates(Set<Employee> subordinates) {
-        this.subordinates = subordinates;
-    }
-
+    private Set<Employee> subordinates;
+    
 }
