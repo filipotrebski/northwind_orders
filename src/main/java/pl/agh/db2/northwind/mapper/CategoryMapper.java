@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Component
 public class CategoryMapper {
 
-    public Category mapToCategory(final CategoryDto categoryDto){
+    public Category mapToCategory(final CategoryDto categoryDto) {
         return new Category(
                 categoryDto.getCategoryId(),
                 categoryDto.getCategoryName(),
@@ -30,7 +30,7 @@ public class CategoryMapper {
 
     public List<CategoryDto> mapToCategoryDtoList(final List<Category> categoryList) {
         return categoryList.stream()
-                .map( t -> new CategoryDto(t.getCategoryId(),t.getCategoryName(),t.getDescription(),t.getPicture()))
+                .map(t -> new CategoryDto(t.getCategoryId(), t.getCategoryName(), t.getDescription(), t.getPicture()))
                 .collect(Collectors.toList());
     }
 }
