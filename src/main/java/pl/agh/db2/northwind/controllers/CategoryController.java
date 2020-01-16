@@ -28,7 +28,7 @@ public class CategoryController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/category")
     public List<CategoryDto> getGategories() {
-        return categoryMapper.maoToCategoryDyoList(dbService.getCategoryDao().findAll());
+        return categoryMapper.mapToCategoryDtoList().ToCategoryDyoList(dbService.getCategoryDao().findAll());
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/category/{id}")
