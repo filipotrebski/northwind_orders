@@ -15,102 +15,38 @@ import javax.persistence.*;
 @Table(name = "PRODUCTS")
 public class Product {
 
-    private Integer productId;
-    private String productName;
-    private Supplier supplierId;
-    private Category categoryId;
-    private String quantityPerUnit;
-    private double unitPrice;
-    private int unitsInStock;
-    private int unitsInOrder;
-    private int reorderLevel;
-    private int discountinued;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRODUCTID", unique = true)
-    public Integer getProductId() {
-        return productId;
-    }
+    private Integer productId;
 
     @Column(name = "PRODUCTNAME")
-    public String getProductName() {
-        return productName;
-    }
+    private String productName;
 
     @ManyToOne
     @JoinColumn(name = "SUPPLIERID")
-    public Supplier getSupplierId() {
-        return supplierId;
-    }
+    private Supplier supplierId;
 
     @ManyToOne
     @JoinColumn(name="categoryId")
-    public Category getCategoryId() {
-        return categoryId;
-    }
+    private Category categoryId;
 
-    public String getQuantityPerUnit() {
-        return quantityPerUnit;
-    }
+    @Column(name = "QUANTITYPERUNIT")
+    private String quantityPerUnit;
 
-    public double getUnitPrice() {
-        return unitPrice;
-    }
+    @Column(name = "UNITPRICE")
+    private double unitPrice;
 
-    public int getUnitsInStock() {
-        return unitsInStock;
-    }
+    @Column(name = "UNITINSTOCK")
+    private int unitsInStock;
 
-    public int getUnitsInOrder() {
-        return unitsInOrder;
-    }
+    @Column(name = "UNITSINORDER")
+    private int unitsInOrder;
 
-    public int getReorderLevel() {
-        return reorderLevel;
-    }
+    @Column(name = "REORDERLEVEL")
+    private int reorderLevel;
 
-    public int getDiscountinued() {
-        return discountinued;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public void setSupplierId(Supplier supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    public void setCategoryId(Category categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public void setQuantityPerUnit(String quantityPerUnit) {
-        this.quantityPerUnit = quantityPerUnit;
-    }
-
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-    public void setUnitsInStock(int unitsInStock) {
-        this.unitsInStock = unitsInStock;
-    }
-
-    public void setUnitsInOrder(int unitsInOrder) {
-        this.unitsInOrder = unitsInOrder;
-    }
-
-    public void setReorderLevel(int reorderLevel) {
-        this.reorderLevel = reorderLevel;
-    }
-
-    public void setDiscountinued(int discountinued) {
-        this.discountinued = discountinued;
-    }
+    @Column(name = "DISCOUNTINUED")
+    private int discountinued;
+    
 }
