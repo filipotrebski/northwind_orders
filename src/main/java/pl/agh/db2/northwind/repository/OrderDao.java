@@ -1,5 +1,6 @@
 package pl.agh.db2.northwind.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface OrderDao extends CrudRepository<Order, Integer> {
+public interface OrderDao extends JpaRepository<Order, Integer> {
 
     @Query(value = "SELECT o FROM Order o")
     public List<Order> showAllOrders();

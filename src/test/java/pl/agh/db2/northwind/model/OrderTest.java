@@ -57,7 +57,7 @@ class OrderTest {
                 customer.getCity(), customer.getRegion(), customer.getPostalCode(), customer.getCountry()));
 
         //then
-        Optional<Order> loaded = orderController.getOrder(savedOrder.getOrderID());
+        Optional<Order> loaded = Optional.of(orderDao.getOne(savedOrder.getOrderID()));
         assertEquals(loaded, Optional.of(new Order(savedOrder.getOrderID(), savedCustomer,savedEmployee, savedOrder.getOrderDate(),
                 savedOrder.getRequiredDate(), savedOrder.getShippedDate(), savedShipper, "Freight", customer.getCompanyName(), customer.getAddress(),
                 customer.getCity(), customer.getRegion(), customer.getPostalCode(), customer.getCountry())));

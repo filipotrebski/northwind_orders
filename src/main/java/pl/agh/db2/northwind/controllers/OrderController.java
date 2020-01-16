@@ -2,34 +2,51 @@ package pl.agh.db2.northwind.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import pl.agh.db2.northwind.mapper.OrderMapper;
 import pl.agh.db2.northwind.model.Order;
+import pl.agh.db2.northwind.model.OrderDto;
 import pl.agh.db2.northwind.repository.OrderDao;
+import pl.agh.db2.northwind.service.DbService;
 
 import java.util.List;
 import java.util.Optional;
+import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
-@Controller
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/v1")
 public class OrderController {
 
     @Autowired
-    private OrderDao orderDao;
+    private DbService service;
 
-    @GetMapping("/order/{id}")
-    @ResponseBody
-    public Optional<Order> getOrder(@PathVariable Integer id){
-        return orderDao.findById(id);
+    @Autowired
+    private OrderMapper orderMapper;
+
+    @RequestMapping(method = RequestMethod.GET, value = "/order/{id}")
+    public OrderDto getOrder(@PathVariable Integer id){
+        return orderMapper.mapToOrderDto(service.getOrderDao().getOne(id));
 
     }
 
-    @GetMapping("/order/all")
-    @ResponseBody
-    public List<Order> orderList(){
+    @RequestMapping(method = RequestMethod.GET, value = "/order")
+    public List<OrderDto> getOrders() {
+        return orderMapper.mapToOrderDtoList(service.getOrderDao().findAll());
+    }
 
-        List<Order> orders = (List<Order>) orderDao.findAll();
+    @RequestMapping(method = RequestMethod.DELETE, value = "/order/{id}")
+    public void deleteOrder(@RequestParam Integer id) {
+        service.getOrderDao().deleteById(id);
+    }
 
-        return orders;
+    @RequestMapping(method = RequestMethod.PUT, value = "/order")
+    public OrderDto updateOrder(@RequestBody OrderDto orderDto) {
+        return orderMapper.mapToOrderDto(service.getOrderDao().save(orderMapper.mapToOrder(orderDto)));
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/order", consumes = APPLICATION_JSON_VALUE)
+    public void createOrder(@RequestBody OrderDto orderDto) {
+        service.getOrderDao().save(orderMapper.mapToOrder(orderDto));
     }
 }
