@@ -1,9 +1,6 @@
 package pl.agh.db2.northwind.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,30 +10,23 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity
+@Getter
+@Setter
 @Table(name = "SHIPPERS")
 public class Shipper {
-    private Integer shipperId;
-    private String companyName;
-    private String phone;
-//    private List<Order> orders;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "SHIPPERID")
-    public Integer getShipperId() {
-        return shipperId;
-    }
+    private Integer shipperId;
 
     @Column(name = "COMPANYNAME")
-    public String getCompanyName() {
-        return companyName;
-    }
+    private String companyName;
 
     @Column(name = "PHONE")
-    public String getPhone() {
-        return phone;
-    }
+    private String phone;
+//    private List<Order> orders;
+
 
 //    @OneToMany(
 //            targetEntity = Order.class,
@@ -52,15 +42,4 @@ public class Shipper {
 //        this.orders = orders;
 //    }
 
-    public void setShipperId(Integer shipperId) {
-        this.shipperId = shipperId;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 }

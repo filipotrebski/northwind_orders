@@ -1,15 +1,14 @@
 package pl.agh.db2.northwind.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Getter
+@Setter
 @EqualsAndHashCode
 @Entity
 @Table(name = "PRODUCTS")
