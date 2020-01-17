@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
-import pl.agh.db2.northwind.controllers.SupplierController;
 import pl.agh.db2.northwind.repository.SupplierDao;
 
 import java.util.Optional;
@@ -17,9 +16,6 @@ class SupplierTest {
     @Autowired
     SupplierDao supplierDao;
 
-    @Autowired
-    SupplierController supplierController;
-
     @Test
     void testSupplierSaveToDatabase(){
 
@@ -30,7 +26,7 @@ class SupplierTest {
         Supplier save = supplierDao.save(supplier);
 
         //then
-        Optional<Supplier> loaded = supplierController.getSupplierById(save.getSupplierID());
+        Optional<Supplier> loaded = supplierDao.findById(save.getSupplierID());
         Assertions.assertEquals(loaded, Optional.of(new Supplier( save.getSupplierID(), "Apple Street", "Brass Town", "Pearl", "Johnr Beach", "Mr", "USA", "123456789", "www.fruitcorp.com", "123456789", "11111", "CAL")));
     }
 }
