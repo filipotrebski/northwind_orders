@@ -29,8 +29,8 @@ public class EmployeeMapper {
                 employeeDto.getPhoto(),
                 employeeDto.getNotes(),
                 employeeDto.getReportsto(),
-                employeeDto.getPhotoPath(),
-                employeeDto.getSubordinates()
+                employeeDto.getPhotoPath()
+//                ,employeeDto.getSubordinates()
         );
     }
     public EmployeeDto mapToEmployeeDto(final Employee employee) {
@@ -52,34 +52,36 @@ public class EmployeeMapper {
                 employee.getPhoto(),
                 employee.getNotes(),
                 employee.getReportsto(),
-                employee.getPhotoPath(),
-                employee.getSubordinates()
+                employee.getPhotoPath()
+//                , employee.getSubordinates()
         );
     }
 
     public List<EmployeeDto> mapToEmployeeDtoList(final List<Employee> employeeList) {
         return employeeList.stream()
-                .map( t -> new EmployeeDto(
-                        t.getEmployeeId(),
-                        t.getLastName(),
-                        t.getFirstName(),
-                        t.getTitle(),
-                        t.getTitleOfCourtesy(),
-                        t.getBirthDate(),
-                        t.getHireDate(),
-                        t.getAddress(),
-                        t.getCity(),
-                        t.getRegion(),
-                        t.getPostalCode(),
-                        t.getCountry(),
-                        t.getHomePhone(),
-                        t.getExtension(),
-                        t.getPhoto(),
-                        t.getNotes(),
-                        t.getReportsto(),
-                        t.getPhotoPath(),
-                        t.getSubordinates()
-                ))
+                .map( t -> {
+                    return new EmployeeDto(
+                            t.getEmployeeId(),
+                            t.getLastName(),
+                            t.getFirstName(),
+                            t.getTitle(),
+                            t.getTitleOfCourtesy(),
+                            t.getBirthDate(),
+                            t.getHireDate(),
+                            t.getAddress(),
+                            t.getCity(),
+                            t.getRegion(),
+                            t.getPostalCode(),
+                            t.getCountry(),
+                            t.getHomePhone(),
+                            t.getExtension(),
+                            t.getPhoto(),
+                            t.getNotes(),
+                            t.getReportsto(),
+                            t.getPhotoPath()
+//                            , t.getSubordinates()
+                    );
+                })
                 .collect(Collectors.toList());
     }
 }

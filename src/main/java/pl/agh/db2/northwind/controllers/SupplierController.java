@@ -1,57 +1,47 @@
 package pl.agh.db2.northwind.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import pl.agh.db2.northwind.model.Supplier;
-import pl.agh.db2.northwind.repository.SupplierDao;
+import org.springframework.web.bind.annotation.*;
+import pl.agh.db2.northwind.mapper.SupplierMapper;
+import pl.agh.db2.northwind.model.SupplierDto;
+import pl.agh.db2.northwind.service.DbService;
 
-import java.util.Optional;
+import java.util.List;
 
-@Controller
+import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
+
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/v1")
 public class SupplierController {
 
     @Autowired
-    SupplierDao supplierDao;
+    private DbService service;
+    @Autowired
+    private SupplierMapper supplierMapper;
 
-    @GetMapping("/supplier")
-    @ResponseBody
-    public String supplier() {
-
-        return "supplier";
+    @RequestMapping(method = RequestMethod.GET, value = "/supplier")
+    public List<SupplierDto> getSuppliers() {
+        return supplierMapper.mapToSupplierDtoList(service.getSupplierDao().findAll());
     }
 
-    @GetMapping("/supplier/{id}")
-    @ResponseBody
-    public Optional<Supplier> getSupplierById(@PathVariable Integer id) {
-        return supplierDao.findById(id);
+    @RequestMapping(method = RequestMethod.GET, value = "/supplier/{id}")
+    public SupplierDto getSupplier(@RequestParam Integer id) {
+        return supplierMapper.mapToSupplierDto(service.getSupplierDao().getOne(id));
     }
 
-    @GetMapping("/supplier/all")
-    @ResponseBody
-    public String allCategory(){
+    @RequestMapping(method = RequestMethod.DELETE, value = "/supplier/{id}")
+    public void deleteSupplier(@RequestParam Integer id) {
+        service.getShipperDao().deleteById(id);
+    }
 
-        StringBuilder response = new StringBuilder();
+    @RequestMapping(method = RequestMethod.PUT, value = "/supplier")
+    public SupplierDto updateSupplier(@RequestBody SupplierDto supplierDto) {
+        return supplierMapper.mapToSupplierDto(service.getSupplierDao().save(supplierMapper.mapToSupplier(supplierDto)));
+    }
 
-        for(Supplier s: supplierDao.showAllSuppliers()){
-
-            response.append(s.getSupplierID()).append(" ")
-                    .append(s.getCompanyName()).append(" ")
-                    .append(s.getAddress()).append(" ")
-                    .append(s.getCity()).append(" ")
-                    .append(s.getContactName()).append(" ")
-                    .append(s.getContactTitle()).append(" ")
-                    .append(s.getSupplierID()).append(" ")
-                    .append(s.getCountry()).append(" ")
-                    .append(s.getFax()).append(" ")
-                    .append(s.getPhone()).append(" ")
-                    .append(s.getPostalCode()).append(" ")
-                    .append(s.getRegion()).append(" ")
-                    .append("<br>");
-        }
-
-        return response.toString();
+    @RequestMapping(method = RequestMethod.POST, value = "/suplier", consumes = APPLICATION_JSON_VALUE)
+    public void createSupplier(@RequestBody SupplierDto supplierDto) {
+        service.getSupplierDao().save(supplierMapper.mapToSupplier(supplierDto));
     }
 }

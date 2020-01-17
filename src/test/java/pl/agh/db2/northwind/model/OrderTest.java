@@ -45,7 +45,7 @@ class OrderTest {
         Customer customer = new Customer(null, "Chip corp", "Joe Black","Mr", "Colt Ave.", "Chicago", "IL", "425664","USA", "123123123", "123123123");
         Shipper shipper = new Shipper(null, "Super Delivery Corp.", "123456789");
         Employee employee = new Employee( null, "last Name", "first bame", "title", "title of", Date.from(Instant.now()), Date.from(Instant.now()), "Addres", "city",
-                "region", "postal code", "country", "home phone", "extention", "photo", "wowo", 1, "23123",new HashSet<>());
+                "region", "postal code", "country", "home phone", "extention", "photo", "wowo", 1, "23123");
 
 
         //when
@@ -57,7 +57,7 @@ class OrderTest {
                 customer.getCity(), customer.getRegion(), customer.getPostalCode(), customer.getCountry()));
 
         //then
-        Optional<Order> loaded = orderController.getOrder(savedOrder.getOrderID());
+        Optional<Order> loaded = Optional.of(orderDao.getOne(savedOrder.getOrderID()));
         assertEquals(loaded, Optional.of(new Order(savedOrder.getOrderID(), savedCustomer,savedEmployee, savedOrder.getOrderDate(),
                 savedOrder.getRequiredDate(), savedOrder.getShippedDate(), savedShipper, "Freight", customer.getCompanyName(), customer.getAddress(),
                 customer.getCity(), customer.getRegion(), customer.getPostalCode(), customer.getCountry())));

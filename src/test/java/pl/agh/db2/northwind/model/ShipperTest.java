@@ -27,7 +27,7 @@ public class ShipperTest {
     ShipperController shipperController;
 
     @Test
-    public void testShpperSaveToDatabase() {
+    public void testShipperSaveToDatabase() {
         //given
         Shipper shipper = new Shipper(null, "Super Delivery Corp.", "123456789");
 
@@ -36,7 +36,7 @@ public class ShipperTest {
 
         //then
         
-        Optional<Shipper> loaded = shipperController.getShipperById(save.getShipperId());
+        Optional<Shipper> loaded = shipperDao.findById(save.getShipperId());
         Assertions.assertThat(loaded).isEqualTo((Optional.of(new Shipper(save.getShipperId(),"Super Delivery Corp.", "123456789"))));
     }
 }

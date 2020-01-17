@@ -3,6 +3,7 @@ package pl.agh.db2.northwind.mapper;
 import org.springframework.stereotype.Component;
 import pl.agh.db2.northwind.model.Order;
 import pl.agh.db2.northwind.model.OrderDto;
+import pl.agh.db2.northwind.repository.CustomerDao;
 
 import java.util.List;
 import java.util.stream.Collectors;

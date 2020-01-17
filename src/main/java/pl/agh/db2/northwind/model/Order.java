@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -32,6 +33,23 @@ public class Order {
     private String shipCountry;
 
 
+    public Order(Integer orderID, Customer customerID, Employee employeeID, Shipper shipVia) {
+        this.orderID = orderID;
+        this.customerID = customerID;
+        this.employeeID = employeeID;
+        this.orderDate =  new Date();
+        this.requiredDate = new Date();
+        this.shippedDate = new Date();
+        this.shipVia = shipVia;
+        this.freight = shipVia.getCompanyName();
+        this.shipName = customerID.getCompanyName();
+        this.shipAddress = customerID.getAddress();
+        this.shipCity = customerID.getCity();
+        this.shipRegion = customerID.getRegion();
+        this.shipPostalCode = customerID.getPostalCode();
+        this.shipCountry = customerID.getCountry();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ORDERID", unique = true)
@@ -48,6 +66,7 @@ public class Order {
     public Customer getCustomerID() {
         return customerID;
     }
+
 
     public void setCustomerID(Customer customerID) {
         this.customerID = customerID;

@@ -1,46 +1,48 @@
 package pl.agh.db2.northwind.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import pl.agh.db2.northwind.model.Shipper;
-import pl.agh.db2.northwind.repository.ShipperDao;
+import org.springframework.web.bind.annotation.*;
+import pl.agh.db2.northwind.mapper.ShipperMapper;
+import pl.agh.db2.northwind.model.ShipperDto;
+import pl.agh.db2.northwind.service.DbService;
 
-import java.util.Optional;
+import java.util.List;
 
-@Controller
+import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
+
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/v1")
 public class ShipperController {
 
     @Autowired
-    ShipperDao shipperDao;
+    private DbService service;
 
-    @GetMapping("/shipper")
-    @ResponseBody
-    public String shipper(){
+    @Autowired
+    private ShipperMapper shipperMapper;
 
-        return "shipper";
+    @RequestMapping(method = RequestMethod.GET, value = "/shipper")
+    public List<ShipperDto> getShippers() {
+        return shipperMapper.mapToShipperDtoList(service.getShipperDao().findAll());
     }
 
-    @GetMapping("/shipper/{id}")
-    @ResponseBody
-    public Optional<Shipper> getShipperById(@PathVariable Integer id){return shipperDao.findById(id);}
+    @RequestMapping(method = RequestMethod.GET, value = "/shipper/{id}")
+    public ShipperDto getShipper(@RequestBody Integer id) {
+        return shipperMapper.mapToShipperDto(service.getShipperDao().getOne(id));
+    }
 
-    @GetMapping("/shipper/all")
-    @ResponseBody
-    public String allShipper(){
+    @RequestMapping(method = RequestMethod.DELETE, value = "/shipper/{id}")
+    public void deleteShipper(@RequestParam Integer id) {
+        service.getShipperDao().deleteById(id);
+    }
 
-        StringBuilder response = new StringBuilder();
+    @RequestMapping(method = RequestMethod.PUT, value = "/shipper")
+    public ShipperDto updateShipper(@RequestBody ShipperDto shipperDto) {
+        return shipperMapper.mapToShipperDto(service.getShipperDao().save(shipperMapper.mapToShipper(shipperDto)));
+    }
 
-        for(Shipper s: shipperDao.showAllShipper()){
-
-            response.append(s.getShipperId()).append(" ")
-                    .append(s.getCompanyName()).append(" ")
-                    .append(s.getPhone()).append(" ")
-                    .append("<br>");
-        }
-
-        return response.toString();
+    @RequestMapping(method = RequestMethod.POST, value = "/shipper", consumes = APPLICATION_JSON_VALUE)
+    public void createShipper(@RequestBody ShipperDto shipperDto) {
+        service.getShipperDao().save(shipperMapper.mapToShipper(shipperDto));
     }
 }

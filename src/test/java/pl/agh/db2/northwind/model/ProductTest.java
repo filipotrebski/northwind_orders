@@ -44,7 +44,7 @@ class ProductTest {
         //given
         Supplier supplier = new Supplier(null, "Apple Street", "Brass Town", "Pearl", "Johnr Beach", "Mr", "USA", "123456789", "www.fruitcorp.com", "123456789", "11111", "CAL");
         Category category = new Category(null, "Seafood", "Sera producrs", "some picture");
-        Product product = new Product(null, "Shrimp", null, null, "12",  10.5, 1000, 1000, 10, 0);
+        Product product = new Product(null, "Shrimp", null, null, "12", 10.5, 1000, 1000, 10, 0);
 
         //when
         Supplier savedSupplier = supplierDao.save(supplier);
@@ -54,8 +54,7 @@ class ProductTest {
 
         Product saveProduct = productDao.save(product);
         //then
-        Optional<Product> loaded = productController.product(saveProduct.getProductId());
-        Assertions.assertEquals(loaded, Optional.of(new Product(saveProduct.getProductId(), "Shrimp", savedSupplier, categorySave, "12",  10.5, 1000, 1000, 10, 0)));
-
+        Optional<Product> loaded = productDao.findById(saveProduct.getProductId());
+        Assertions.assertEquals(loaded, Optional.of(new Product(saveProduct.getProductId(), "Shrimp", savedSupplier, categorySave, "12", 10.5, 1000, 1000, 10, 0)));
     }
 }
