@@ -1,5 +1,6 @@
 package pl.agh.db2.northwind.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 @Transactional
 @Repository
-public interface ShipperDao extends CrudRepository<Shipper, Integer> {
+public interface ShipperDao extends JpaRepository<Shipper, Integer> {
 
     @Override
     Optional<Shipper> findById(Integer integer);

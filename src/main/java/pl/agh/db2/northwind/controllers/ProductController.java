@@ -9,7 +9,7 @@ import pl.agh.db2.northwind.service.DbService;
 
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1")
 public class ProductController {
