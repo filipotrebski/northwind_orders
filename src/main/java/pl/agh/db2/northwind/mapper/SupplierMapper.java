@@ -29,7 +29,7 @@ public class SupplierMapper {
     }
     public SupplierDto mapToSupplierDto(final Supplier supplier) {
         return new SupplierDto(
-                supplier.getSupplierID(),
+                supplier.getSupplierId(),
                 supplier.getCompanyName(),
                 supplier.getContactName(),
                 supplier.getContactTitle(),
@@ -46,7 +46,7 @@ public class SupplierMapper {
 
     public List<SupplierDto> mapToSupplierDtoList(final List<Supplier> supplierList) {
         return supplierList.stream()
-                .map( t -> new SupplierDto(t.getSupplierID(),
+                .map( t -> new SupplierDto(t.getSupplierId(),
                         t.getCompanyName(),
                         t.getContactName(),
                         t.getContactTitle(),

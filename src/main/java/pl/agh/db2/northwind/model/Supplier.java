@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Entity // adnotacja że klasa będzię encją bazy danych
 @Table(name = "SUPPLIERS") // tablica i jej właściwości
 public class Supplier {
-    private Integer supplierID;
+    private Integer supplierId;
     private String companyName;
     private String contactName;
     private String contactTitle;
@@ -35,8 +35,8 @@ public class Supplier {
     @Column(name = "SUPPLIERID", unique = true)
     // tu że pole jest kolumną oraż jej właściwości, nzwa oraz ze zaweiera unikalnre wartości
     //te adnotacje tylko przy getterach
-    public Integer getSupplierID() {
-        return supplierID;
+    public Integer getSupplierId() {
+        return supplierId;
     }
 
     @Column(name = "COMPANYNAME")
@@ -106,8 +106,8 @@ public class Supplier {
 //    }
 
 
-    public void setSupplierID(Integer supplierID) {
-        this.supplierID = supplierID;
+    public void setSupplierId(Integer supplierID) {
+        this.supplierId = supplierID;
     }
 
     public void setCompanyName(String companyName) {

@@ -26,7 +26,7 @@ class SupplierTest {
         Supplier save = supplierDao.save(supplier);
 
         //then
-        Optional<Supplier> loaded = supplierDao.findById(save.getSupplierID());
-        Assertions.assertEquals(loaded, Optional.of(new Supplier( save.getSupplierID(), "Apple Street", "Brass Town", "Pearl", "Johnr Beach", "Mr", "USA", "123456789", "www.fruitcorp.com", "123456789", "11111", "CAL")));
+        Optional<Supplier> loaded = supplierDao.findById(save.getSupplierId());
+        Assertions.assertEquals(loaded, Optional.of(new Supplier( save.getSupplierId(), "Apple Street", "Brass Town", "Pearl", "Johnr Beach", "Mr", "USA", "123456789", "www.fruitcorp.com", "123456789", "11111", "CAL")));
     }
 }

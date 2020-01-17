@@ -1,4 +1,4 @@
-package basicConfig
+package testScenarios
 
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._

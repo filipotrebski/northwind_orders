@@ -7,6 +7,34 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
+
+@NamedQueries({
+        @NamedQuery(
+                name = "Product.findProductFromSupplier",
+                query = "SELECT Product.productName, Supplier.companyName  " +
+                        "FROM Product " +
+                        "INNER JOIN Supplier " +
+                        "WHERE Product.supplierId = :SUPPLIERID"
+        ),
+        @NamedQuery(
+                name = "Product.getProductsInCategory",
+                query = "SELECT Product.productName, Product.unitsInStock, Category.categoryName " +
+                        "FROM Product " +
+                        "INNER JOIN  Category " +
+                        "WHERE Product.categoryId = :SUPPLIERID"
+        ),
+        @NamedQuery(
+                name = "Product.findProductOrderedByCustomer",
+                query = "SELECT Product.productName, Customer.customerId FROM Product " +
+                        "INNER JOIN OrderDetails " +
+                        "INNER JOIN Order " +
+                        "WHERE Product.productId = OrderDetails.productId " +
+                        "AND OrderDetails.orderId = Order.orderID " +
+                        "AND Customer.customerId = :CUSTOMERID"
+
+        )
+})
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
