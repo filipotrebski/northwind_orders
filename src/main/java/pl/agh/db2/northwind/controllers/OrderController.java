@@ -1,16 +1,13 @@
 package pl.agh.db2.northwind.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.agh.db2.northwind.mapper.OrderMapper;
-import pl.agh.db2.northwind.model.Order;
 import pl.agh.db2.northwind.model.OrderDto;
-import pl.agh.db2.northwind.repository.OrderDao;
 import pl.agh.db2.northwind.service.DbService;
 
 import java.util.List;
-import java.util.Optional;
+
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
 @CrossOrigin(origins = "*")
