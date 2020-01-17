@@ -13,7 +13,7 @@ import javax.persistence.*;
 @EqualsAndHashCode
 @Table(name = "CATEGORIES")
 public class Category {
-
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categoryId", unique = true)
