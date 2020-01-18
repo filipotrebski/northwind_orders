@@ -30,12 +30,12 @@ public class ProductController {
         return productMapper.mapToProductDto(service.getProductDao().getOne(id));
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/products/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/products2/{id}")
     public void deleteProduct(@RequestParam Integer id) {
         service.getProductDao().deleteById(id);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/product")
+    @RequestMapping(method = RequestMethod.PUT, value = "/product3")
     public ProductDto updateProduct(@RequestBody ProductDto productDto) {
         return productMapper.mapToProductDto(service.getProductDao().save(productMapper.mapToProduct(productDto)));
     }

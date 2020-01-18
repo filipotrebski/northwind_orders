@@ -8,7 +8,7 @@ import io.gatling.http.Predef._
 
 import scala.concurrent.duration._
 import scala.language.postfixOps
-import scala.language.postfixOps
+
 
 class GetProductHTTP extends  Simulation {
 
@@ -18,9 +18,10 @@ class GetProductHTTP extends  Simulation {
     .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0")
 
   val scn = scenario("Get product from database with atOnce")
-    .repeat(10) {
+    .repeat(100) {
       exec(http("getProduct").get(s"/product/{id}?id=${Random.nextInt(1000)+1}"))
-        .pause(1 millis)
+        .pause(10 millis)
+
     }
 
   setUp(
