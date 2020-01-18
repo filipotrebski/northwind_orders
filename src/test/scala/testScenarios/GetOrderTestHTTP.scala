@@ -18,7 +18,7 @@ class GetOrderTestHTTP extends Simulation {
 
   val scn = scenario("get orders by id with atOnce")
     .repeat(100) {
-      exec(http("create order").get(s"/order/${Random.nextInt(1000)+1}"))
+      exec(http("create order").get(s"/order/{id}?id=${Random.nextInt(1000)+1}"))
         .pause(10 millis)
     }
 

@@ -27,7 +27,7 @@ public class CategoryController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/category")
-    public List<CategoryDto> getGategories() {
+    public List<CategoryDto> getCategories() {
         return categoryMapper.mapToCategoryDtoList(dbService.getCategoryDao().findAll());
     }
 
