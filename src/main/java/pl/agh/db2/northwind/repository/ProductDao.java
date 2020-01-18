@@ -13,12 +13,12 @@ import java.util.List;
 @Repository
 public interface ProductDao extends JpaRepository<Product, Integer> {
 
-    @Query(value = "SELECT p FROM Product p")
-    public List<Product> showAllProducts();
-
-    @Override
-    public Product save(Product p);
-
-    @Override
-    public void delete(Product p);
+//    @Query
+//    List<String> findProductFromSupplier(Integer supplierId);
+//
+//    @Query
+//    List<Product> getProductsInCategory(Integer supplierId);
+//
+//    @Query
+//    List<Product> findProductOrderedByCustomer(Integer customerId);
 }
