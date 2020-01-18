@@ -11,6 +11,9 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class ImportDataController {
@@ -27,8 +30,18 @@ public class ImportDataController {
     public String categoryList() throws ClassNotFoundException, SQLException, IOException {
         Class.forName(driver);
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
-            String scriptName = "test-data.sql";
-            importFromResource(connection, scriptName);
+            String[] names = {"categories.sql", "customers.sql", "employees.sql", "shippers.sql", "suppliers.sql", "products.sql", "orders.sql", "orderdetails.sql"};
+            Arrays.stream(names).forEach(t -> {
+                try {
+                    importFromResource(connection, t);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            });
+//            String scriptName = "test-data.sql";
+//            importFromResource(connection, scriptName);
         }
         return "Done";
     }

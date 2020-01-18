@@ -1,0 +1,10 @@
+insert into shippers (companyname, phone) values ('Johnston LLC', '536-521-4289');
+insert into shippers (companyname, phone) values ('Harvey, Jenkins and Kilback', '802-648-7916');
+insert into shippers (companyname, phone) values ('Dickens, Ortiz and Murray', '451-721-5892');
+insert into shippers (companyname, phone) values ('Thiel-Rogahn', '349-226-8101');
+insert into shippers (companyname, phone) values ('Tromp-Treutel', '135-201-7585');
+insert into shippers (companyname, phone) values ('Bartoletti Inc', '104-814-2885');
+insert into shippers (companyname, phone) values ('Windler LLC', '280-381-3303');
+insert into shippers (companyname, phone) values ('Leuschke and Sons', '443-796-4505');
+insert into shippers (companyname, phone) values ('Stanton LLC', '827-666-0294');
+insert into shippers (companyname, phone) values ('Donnelly-Schmidt', '941-273-8682');

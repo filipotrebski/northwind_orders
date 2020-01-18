@@ -10,15 +10,15 @@ import scala.concurrent.duration._
 import scala.language.postfixOps
 import scala.language.postfixOps
 
-class CartTestHTTP extends Simulation {
+class GetOrderTestHTTP extends Simulation {
   val httpConf = http.baseUrl("http://127.0.0.1:8080/")
     .acceptLanguageHeader("en-US,en;q=0.5")
     .acceptEncodingHeader("gzip, deflate")
     .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0")
 
-  val scn = scenario("Get product from database with atOnce")
+  val scn = scenario("get orders by id with atOnce")
     .repeat(100) {
-      exec(http("get product").get(s"/product/${Random.nextInt(1000)+1}"))
+      exec(http("create order").get(s"/order/${Random.nextInt(1000)+1}"))
         .pause(10 millis)
     }
 

@@ -10,7 +10,7 @@ import scala.concurrent.duration._
 import scala.language.postfixOps
 import scala.language.postfixOps
 
-class GetProductHTTP extends  Simulation {
+class DeleteProductTestHTTP extends Simulation{
 
   val httpConf = http.baseUrl("http://localhost:8080/v1")
     .acceptLanguageHeader("en-US,en;q=0.5")
@@ -19,7 +19,7 @@ class GetProductHTTP extends  Simulation {
 
   val scn = scenario("Get product from database with atOnce")
     .repeat(100) {
-      exec(http("getProduct").get(s"/product/${Random.nextInt(1000)+1}"))
+      exec(http("getProduct").delete(s"/product/${Random.nextInt(1000)+1}"))
         .pause(10 millis)
     }
 
