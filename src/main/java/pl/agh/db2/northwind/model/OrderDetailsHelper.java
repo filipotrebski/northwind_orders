@@ -3,15 +3,14 @@ package pl.agh.db2.northwind.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class OrderDetailsDto {
-    private Integer orderId;
+@Setter
+public class OrderDetailsHelper {
     private Integer productId;
-    private double unitPrice;
-    private int quantity;
-    private float discount;
-
+    private Integer quantity;
+    private Float discount;
 }
