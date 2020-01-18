@@ -14,7 +14,7 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode
 @Entity(name = "CUSTOMERS")
-@Table(n?ame = "CUSTOMERS")
+@Table(name = "CUSTOMERS")
 public class Customer {
 
     @Id
