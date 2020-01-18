@@ -17,9 +17,9 @@ class DeleteProductTestHTTP extends Simulation{
     .acceptEncodingHeader("gzip, deflate")
     .userAgentHeader("Mozilla/5.0 (Windows NT 5.1; rv:31.0) Gecko/20100101 Firefox/31.0")
 
-  val scn = scenario("Get product from database with atOnce")
+  val scn = scenario("delete product from database with atOnce")
     .repeat(100) {
-      exec(http("getProduct").delete(s"/product/${Random.nextInt(1000)+1}"))
+      exec(http("delete product").delete(s"/product/${Random.nextInt(1000)+1}"))
         .pause(10 millis)
     }
 
