@@ -39,4 +39,9 @@ public class ProductController {
     public ProductDto updateProduct(@RequestBody ProductDto productDto) {
         return productMapper.mapToProductDto(service.getProductDao().save(productMapper.mapToProduct(productDto)));
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/product/supplier/{id}")
+    public List<String> getProductAndSupplierNameBySuplierId(@RequestParam Integer id){
+        return service.getProductDao().findProductFromSupplier(id);
+    }
 }

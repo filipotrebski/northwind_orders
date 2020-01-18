@@ -13,9 +13,12 @@ import java.util.List;
 @Repository
 public interface ProductDao extends JpaRepository<Product, Integer> {
 
-    List<Product> findProductFromSupplier(Integer supplierId);
-
-    List<Product> getProductsInCategory(Integer supplierId);
-
-    List<Product> findProductOrderedByCustomer(Integer customerId);
+//    @Query
+//    List<String> findProductFromSupplier(Integer supplierId);
+//
+//    @Query
+//    List<Product> getProductsInCategory(Integer supplierId);
+//
+//    @Query
+//    List<Product> findProductOrderedByCustomer(Integer customerId);
 }
