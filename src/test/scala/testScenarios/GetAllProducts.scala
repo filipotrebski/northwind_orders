@@ -1,17 +1,13 @@
 package testScenarios
 
-import io.gatling.core.scenario.Simulation
 import io.gatling.core.Predef._
-
-import scala.util.Random
+import io.gatling.core.scenario.Simulation
 import io.gatling.http.Predef._
 
 import scala.concurrent.duration._
 import scala.language.postfixOps
 
-
-class GetProductHTTP extends  Simulation {
-
+class GetAllProducts extends  Simulation{
   val httpConf = http.baseUrl("http://localhost:8080/v1")
     .acceptLanguageHeader("en-US,en;q=0.5")
     .acceptEncodingHeader("gzip, deflate")
@@ -19,7 +15,7 @@ class GetProductHTTP extends  Simulation {
 
   val scn = scenario("Get product from database with atOnce")
     .repeat(100) {
-      exec(http("getProduct").get(s"/product/${Random.nextInt(1000)+1}"))
+      exec(http("getProduct").get(s"/product"))
         .pause(10 millis)
     }
 
